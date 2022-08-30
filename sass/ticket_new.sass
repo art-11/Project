@@ -1,0 +1,1822 @@
+﻿//This is sass file
+@import default
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap')
+
+html
+	scroll-padding-top: 122px
+a
+    transition: all .3s ease-out
+
+.ticket-width
+    max-width: 1350px
+    +rwd(1390px)
+        padding: 0 20px
+
+.accordion
+
+.ticket-width2
+    max-width: 1200px
+    margin: auto
+
+.ticket-tab
+    display: flex
+    justify-content: flex-end
+    margin-bottom: 20px
+
+    .ticket-tab-btn
+        
+        display: flex
+        overflow: hidden
+        a
+            width: 50%
+            display: block
+            font-size: 16px
+            font-weight: bold
+            padding: 9px 16px
+            color: #26bdf0
+            transition: all .3s ease-out
+            border: solid 2px #26bdf0
+
+            &.active, &:hover
+                background: #26bdf0
+                color: #fff
+
+            &:nth-child(1)
+                -webkit-border-top-left-radius: 36px
+                -webkit-border-bottom-left-radius: 36px
+                -moz-border-radius-topleft: 36px
+                -moz-border-radius-bottomleft: 36px
+                border-top-left-radius: 36px
+                border-bottom-left-radius: 36px
+                border-width: 2px 0 2px 2px
+            &:nth-child(2)
+                -webkit-border-top-right-radius: 36px
+                -webkit-border-bottom-right-radius: 36px
+                -moz-border-radius-topright: 36px
+                -moz-border-radius-bottomright: 36px
+                border-top-right-radius: 36px
+                border-bottom-right-radius: 36px
+                border-width: 2px 2px 2px 0
+                
+.ticket-list-title
+    background: url('../images/list-title-bg.jpg') no-repeat
+    font-size: 30px
+    font-weight: bold
+    margin-left: 13px
+    padding: 25px 0 0 90px
+    height: 80px
+
+.ticket-title
+    height: 30px
+    line-height: 30px
+    border-left: solid 10px #00b8ef
+    padding-left: 20px
+    font-size: 24px
+    font-weight: bold
+    color: #000
+    span
+        font-size: 14px
+        color: #b1b1b1
+        font-family: 'Roboto','微軟正黑體', sans-serif
+        padding-left: 17px
+        text-transform: uppercase
+        font-weight: normal
+
+
+.ticket-list-text
+    padding: 15px 0 0 105px
+    color: #000
+    font-size: 18px
+    font-weight: bold
+    +rwd(576px)
+        padding: 15px 0 0 0
+
+
+.ticket-list
+    display: grid
+    grid-template-columns: repeat(3,1fr)
+    grid-template-rows: auto
+    grid-gap: 27px
+    margin: 35px 0 95px 0
+
+    +rwd(768px)
+        grid-template-columns: repeat(2,1fr)
+
+    +rwd(576px)
+        grid-gap: 20px
+
+    .ticket-list-row
+        width: 100%
+        overflow: hidden
+        border-radius: 10px
+
+        &:hover
+            .ticket-list-img
+                img
+                    transform: translateX(-26px)
+                    transition: all 1s ease-out
+
+    .ticket-list-img
+        position: relative
+        height: 228px
+        +rwd(576px)
+            height: 150px
+
+        a
+            display: block
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            z-index: 4
+            overflow: hidden
+            text-indent: -999px
+
+        img
+            width: auto
+            height: 228px
+            display: block
+            position: relative
+            z-index: 1
+            transition: all 1s ease-out
+
+            +rwd(576px)
+                height: 150px
+
+        &:before
+            content: ''
+            display: block
+            position: absolute
+            width: 100%
+            height: 50%
+            bottom: 0
+            left: 0
+            z-index: 2
+            background: rgb(0,0,0)
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.767927239255077) 100%)
+
+        .info
+            width: 100%
+            position: absolute
+            bottom: 0
+            padding: 20px
+            z-index: 3
+            display: flex
+            justify-content: space-between
+            +rwd(576px)
+                padding: 10px
+            
+                
+
+
+            .text
+                width: 112px
+                overflow: hidden
+                display: -webkit-box
+                -o-text-overflow: ellipsis
+                text-overflow: ellipsis
+                -webkit-line-clamp: 2
+                -webkit-box-orient: vertical
+                color: #dddddd
+                line-height: 22px
+                
+
+            .price
+                text-align: right
+                color: #fff
+                font-weight: bold
+                font-family: 'Roboto','微軟正黑體', sans-serif
+                font-size: 14px
+                
+                span
+                    vertical-align: middle
+
+
+                .original
+                    color: #bfbfbf
+                    text-decoration: line-through
+                    font-weight: normal
+
+                .big
+                    font-size: 24px
+
+            +rwd(576px)
+                justify-content: flex-end
+                .text
+                    display: none
+
+
+    .ticket-list-info
+        width: 100%
+        border: solid 1px #d8d8d8
+        border-width: 0 1px 1px 1px
+        -webkit-border-bottom-right-radius: 10px
+        -webkit-border-bottom-left-radius: 10px
+        -moz-border-radius-bottomright: 10px
+        -moz-border-radius-bottomleft: 10px
+        border-bottom-right-radius: 10px
+        border-bottom-left-radius: 10px
+        padding: 20px
+
+        +rwd(576px)
+            padding: 10px
+
+        .name
+            font-size: 18px
+            font-weight: bold
+            display: block      
+            color: #000
+            vertical-align: middle
+
+            &:after
+                content: ''
+                display: inline-block
+                width: 12px
+                height: 12px
+                background: url('../images/launch_black_24dp.svg') no-repeat
+                background-size: cover
+                margin-top: -20px
+                margin-left: 5px
+            &:hover
+                color: #00b8ef
+
+        .text
+            margin: 20px 0
+            overflow: hidden
+            display: -webkit-box
+            -o-text-overflow: ellipsis
+            text-overflow: ellipsis
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            color: #666666
+            font-size: 16px
+            +rwd(576px)
+                margin: 10px 0
+
+        .btm
+            width: 100%
+            display: flex
+            white-space: nowrap
+            line-height: 24px
+            align-items: center
+
+            .icon
+                padding: 0 0 0 30px
+                background: url('../images/schedule_black_24dp.svg') no-repeat 0 center
+                background-size: auto 18px
+                height: 24px
+
+            .line
+                min-width: 1px
+                width: 1px
+                height: 20px
+                background: #e1e1e1
+                margin: 0 12px
+
+            .style
+                text-overflow: ellipsis
+                overflow: hidden
+
+            +rwd(576px)
+                display: none
+
+.ticket-link
+    margin-left: 25px
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    padding: 50px 0 70px 0
+
+    a
+        display: block
+        padding: 0 25px
+        font-size: 18px
+        font-weight: bold
+        color: #000
+        border-left: solid 1px #afafaf
+        line-height: 16px
+        height: 16px
+        margin-bottom: 20px
+
+        &:last-child
+            border-right: solid 1px #afafaf
+
+        &.active
+            color: #afafaf
+            &:hover
+                color: #afafaf
+
+        &:hover
+            color: #00b8ef
+.no-fixed
+    header
+        position: absolute !important
+        top: 0 !important
+        +rwd(1200px)
+            position: fixed !important
+.ticket-banner-wrap
+    display: flex
+    align-items: center
+    width: 100%
+    height: 100vh
+    overflow: hidden
+    max-height: 643px
+    +rwd(1200px)
+        height: auto
+        margin-top: 70px
+
+    .ticket-banner
+        position: relative
+        width: 100%
+        img
+            width: 100%
+            height: auto
+            display: block
+        .ticket-slider
+            background: #fff
+            .slick-dots
+                bottom: -21px
+                display: flex
+                justify-content: flex-end
+                text-align: none
+                padding-right: 8px
+                li
+                    width: auto
+                    height: auto
+                    margin-left: 4px
+                    button
+                        width: 9px
+                        height: 9px
+                        border: solid 1px #9fa4ac
+                        padding: 0
+                        transition: all .3s ease-out
+
+
+                    &.slick-active
+                        button
+                            background: #9fa4ac
+
+
+        .white-shadow
+            width: 300px
+            height: 338px
+            top: 113px
+            position: absolute
+            z-index: 2
+            
+
+        .white-shadow-left
+            left: calc(50% - 750px)
+            background: rgb(255,255,255)
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.891176538974965) 80%)
+
+        .white-shadow-right
+            right: calc(50% - 750px)
+            background: rgb(255,255,255)
+            background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.891176538974965) 80%)
+
+
+        .ticket-slider
+            position: relative
+            z-index: 3
+            width: 900px
+            margin: auto
+            +rwd(900px)
+                width: 100%
+
+        .bg-image
+            width: 100%
+            height: 338px
+            position: absolute
+            overflow: hidden
+            z-index: 1
+            top: 113px
+            +rwd(900px)
+                display: none
+
+            img
+                display: block
+                max-width: 50%
+                max-width: 960px !important
+
+            .right
+                height: inherit
+                img
+                    position: absolute
+                    top: 0
+                    left: 50%
+
+            .left
+                height: inherit
+                img
+                    position: absolute
+                    top: 0
+                    right: 50%
+
+.scroll-move
+    #scrollUp       
+        bottom: 60px  
+.ticket-detail
+    width: 1200px
+    margin: 55px auto 0
+    +rwd(1240px)
+        width: 100%
+        padding: 0 20px
+        margin: 20px auto 0
+
+    .ticket-detail-name
+        width: 100%
+        background: url('../images/name_bg.jpg') no-repeat
+        padding: 18px 0 0 75px
+        margin-bottom: 10px
+        font-size: 36px
+        font-weight: bold
+        color: #000
+        min-height: 82px
+
+        +rwd(1200px)
+            background: url('../images/name_bg.jpg') no-repeat
+            background-size: 80px auto
+            font-size: 24px
+            padding: 12px 0 0 60px
+            min-height: 60px
+
+    .ticket-detail-top
+        display: grid
+        grid-template-columns: 1fr 335px
+        grid-column-gap: 22px
+        margin-bottom: 20px
+        align-items: flex-start
+
+        +rwd(1200px)
+            grid-template-columns: 1fr
+            .detail-info
+                order: 1
+            .detail-content
+                order: 2
+
+        .detail-info
+            width: 100%
+            border: solid 1px #e8e8e8
+            border-radius: 10px
+            padding: 20px
+            .price
+                display: flex
+                justify-content: space-between
+                width: 100%
+                font-family: 'Roboto','微軟正黑體', sans-serif
+                align-items: center
+                color: #888f95
+                margin: 15px 0
+                .front
+                    display: block
+                    background: #ededed
+                    padding: 5px 8px
+                    font-size: 18px
+                    font-weight: 700
+                    text-decoration: line-through
+
+                .back
+                    text-align: right
+                    font-size: 18px
+                    .num
+                        color: #2bc8f9
+                        font-size: 32px
+                        font-weight: bold
+                        display: inline
+                        .small
+                            font-size: 22px
+
+            .list
+                border-top: solid 1px #e8e8e8
+                .list-title
+                    margin: 25px 0 20px 0
+                    font-size: 18px
+                    font-weight: bold
+
+                .list2
+                    li
+                        padding-left: 45px
+                        margin-bottom: 15px
+                        color: #666
+
+                        &.icon1
+                            background: url('../images/event_note_black_24dp.svg') no-repeat
+                        &.icon2
+                            background: url('../images/restore_black_24dp.svg') no-repeat
+                        &.icon3
+                            background: url('../images/location_on_black_24dp.svg') no-repeat
+                        &.icon4
+                            background: url('../images/group_add_black_24dp.svg') no-repeat 2px 0
+                        &.icon5
+                            background: url('../images/search.svg') no-repeat 2px 0
+                            background-size: 20px
+                        &.icon6
+                            background: url('../images/style_black_24dp.svg') no-repeat 2px 0
+                        &.icon7
+                            background: url('../images/edit_calendar_black_24dp.svg') no-repeat 2px 0
+                            background-size: 22px
+
+            .list-btn
+                display: flex
+                width: 100%
+                height: 50px
+                border-radius: 5px
+                background: #2bc8f9
+                color: #fff
+                font-weight: bold
+                font-size: 20px
+                justify-content: center
+                align-items: center
+                margin-top: 25px
+
+                &:before
+                    content: ''
+                    display: block
+                    background: url('../images/post_add_black_24dp.svg') no-repeat center center
+                    background-size: 27px
+                    width: 27px
+                    height: 27px
+                    margin-right: 8px
+
+
+                &:hover
+                    background: #ffa200
+
+                +rwd(1200px)
+                    display: none
+
+
+
+
+
+
+                    
+    
+        .detail-content
+            border-top: solid 1px #e8e8e8
+            width: 100%
+
+            .slogan
+                color: #e2803e
+                padding: 20px 0 13px 13px
+
+    .ticket-tag.true
+        position: fixed
+        width: 100%
+        left: 0
+        z-index: 3
+        +rwd(1200px)
+            
+
+
+
+    .ticket-tag
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 70px
+        background: #fff
+        transition: all 1s ease-out
+        +rwd(1200px)
+            position: fixed
+            top: 96px !important
+            left: 0
+            z-index: 9
+            flex-wrap: wrap
+            width: 100%                   
+            height: auto
+            justify-content: flex-start
+            background: #f7f7f7
+            padding: 5px 10px
+
+        +rwd(480px)
+            top: 71px !important
+             
+        .ticket-tag-link
+            font-size: 20px
+            font-weight: bold
+            display: inline-block
+            margin: 0 23px
+            color: #000
+            position: relative
+
+                       
+
+            &:before
+                content: ''
+                display: block
+                width: 100%
+                height: 3px
+                background: #2bc8f9
+                position: absolute
+                bottom: -10px
+                transform: scale(0)
+                transition: all .3s ease-out
+
+            &:hover
+                color: #2bc8f9
+
+                &:before
+                    transform: scale(1)
+
+            +rwd(1200px)
+                white-space: nowrap
+                font-size: 15px
+                width: 25%
+                margin: 0
+                text-align: center
+                line-height: 30px
+
+                &:before
+                    display: none
+
+
+        .ticket-tag-link2
+            background: url('../images/btn-bg.jpg') repeat
+            color: #fff
+            font-size: 20px
+            font-weight: bold
+            height: 44px
+            line-height: 44px
+            border-radius: 44px
+            padding: 0 24px
+            margin: 0 23px
+            +rwd(1200px)
+                white-space: nowrap
+                font-size: 15px
+                line-height: 30px
+                height: auto
+                margin: 0 auto
+                padding: 0 10px
+                
+
+                
+
+            &:hover
+                opacity: .7
+
+    .row-first
+        &.true
+            padding-top: 120px
+            +rwd(1200px)
+                padding-top: 0
+    .daytour-row
+        padding-bottom: 50px
+        position: relative
+        z-index: 1
+
+        iframe
+            width: 100% !important
+
+        .ticket-list
+            margin: 35px 0 0 0
+        .ticket-title
+            margin: 0 0 20px 0
+        .sub_title
+            background: url('../images/tit_bg_coupon2.jpg') repeat-x center center
+        .day_tour
+            .day_box
+                cursor: pointer
+                background: url(../images/day_bg2.jpg) no-repeat left top
+                .day_content
+                    .num
+                        text-shadow: 2px 2px 0 #1fb1df
+                    .word_day
+                        text-indent: 0
+                        text-align: center
+                        font-size: 27px
+                        font-weight: bold
+                        color: #fff
+                        font-family: '微軟正黑體'
+                        text-shadow: 0 1px 5px #3b3b3b
+                        padding-left: 16px
+
+                    +rwd(640px)
+                        background: #26bdf0
+                        .num
+                            text-shadow: 0 1px 5px #3b3b3b
+                            
+                        .word_day
+                            padding-left: 0
+
+                +rwd(768px)
+                    background: url(../images/day_bg2.jpg) no-repeat left top
+                    background-size: 140px
+
+
+
+            .pic_content
+                background: url(../images/line4.jpg) no-repeat left top
+
+                .imgfor3
+                    .big_title
+                        background: none
+
+                .big_title
+                    background: url(../images/blue_line2.jpg) no-repeat center bottom
+
+    .btm-btn
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 50px
+
+        .link
+            border-radius: 5px
+            width: 172px
+            display: block
+            height: 50px
+            line-height: 50px
+            text-align: center
+            color: #fff
+            font-size: 20px
+            font-weight: bold
+            margin: 0 15px
+
+        .link-bg1
+            background: #2bc8f9
+        .link-bg2
+            background: #d3d3d3
+
+            
+
+
+.booking-area
+    overflow: hidden
+    .booking-right
+        width: 28%
+        border-radius: 10px
+        border: solid 1px #e6e6e6
+        float: right
+        padding: 18px
+        +rwd(768px)
+            width: 100%
+            margin-top: 20px
+
+        .booking-right-top
+            border-bottom: solid 1px #dedede
+            padding-bottom: 15px
+            display: flex
+            align-items: center
+            font-family: 'Roboto','微軟正黑體', sans-serif
+
+            .tit
+                font-size: 18px
+                font-weight: bold
+                color: #666666
+                padding-right: 15px
+                min-width: 70px
+
+            .tit2
+                color: #2bc8f9
+                font-size: 22px
+                font-weight: bold
+
+            .price
+                color: #2bc8f9
+                font-size: 36px
+                font-weight: bold
+                display: block
+                text-align: center
+                width: 100%
+        .booking-right-title
+            font-size: 18px
+            font-weight: bold
+            color: #666666
+            margin: 20px 0
+
+        .booking-right-content
+            position: relative
+            width: 100%
+            height: 370px
+            font-size: 16px
+            color: #666666
+            line-height: 1.5
+            overflow: hidden
+
+        .booking-right-btn
+            width: 100%
+            border-radius: 5px
+            background: #2bc8f9
+            appearance: none
+            border: 0
+            height: 50px
+            margin-top: 20px
+            font-weight: bold
+            color: #fff
+            font-size: 20px
+            display: flex
+            justify-content: center
+            align-items: center
+            transition: all .3s ease-out
+
+            +rwd(1200px)
+                position: fixed
+                margin-top: 0
+                width: 100%
+                bottom: 0
+                left: 0
+                border-radius: 0
+                z-index: 99
+
+            &:hover
+                background: #ffa200
+            
+        .btn-style1
+            &:before
+                content: ''
+                display: block
+                background: url('../images/done_white_24dp.svg') no-repeat 0 center
+                width: 24px
+                height: 24px
+                margin-right: 10px
+
+        .btn-style2
+            &:before
+                content: ''
+                display: block
+                background: url('../images/cart.svg') no-repeat 0 center
+                width: 27px
+                height: 27px
+                margin-right: 10px
+
+
+
+
+
+    .booking-left
+        width: 70%
+        float: left
+        border-radius: 10px
+        background: #f9f9f9
+        border: solid 1px #e6e6e6
+        padding: 7px 37px 37px 37px
+        +rwd(768px)
+            padding: 7px 20px 20px 20px
+            width: 100%
+        .booking-row
+            margin-top: 30px
+            .no-flex
+                +rwd(768px)
+                    flex-wrap: nowrap !important
+                    .column
+                        .text
+                            width: 50% !important
+
+                +rwd(480px)
+                    flex-wrap: wrap !important
+                    .line
+                        display: none !important
+                    .column
+                        width: 100% !important
+
+            .row1
+                display: flex
+                align-items: center
+                margin-top: 14px
+                flex-wrap: wrap
+                .line
+                    display: block
+                    min-width: 17px 
+                    height: 5px
+                    background: url('../images/arrow_right_alt_black_24dp.svg') no-repeat 0 center
+                    background-size: 17px auto
+                    margin: 0 13px
+                .column
+                    box-shadow: 0 5px 15px #dde6ea
+                    background: #fff
+                    width: 245px
+                    height: 50px
+                    .text
+                        appearance: none
+                        background: #fff
+                        border: 0
+                        height: 50px
+                        width: 100%
+                        outline: none
+                        padding: 0 50px 0 20px
+                        background: url('../images/calendar.png') no-repeat right 20px center
+                .column2
+                    box-shadow: 0 5px 15px #dde6ea
+                    background: #fff
+                    border-radius: 65px
+                    margin-right: 12px
+                    margin-bottom: 12px
+                    
+                    
+                    input
+                        display: none
+
+                    input[type=radio]:checked + label
+                        span
+                            color: #2bc8f9
+                    
+                    .in
+                        padding: 11px 25px
+                        text-align: center
+                        font-weight: bold
+                        display: block
+                        cursor: pointer
+
+                        span
+                            color: #747474
+                            display: block
+                            width: 100%
+                            font-family: 'Roboto','微軟正黑體', sans-serif
+
+                            &.time
+                                margin-top: 3px
+
+                .short
+                    position: relative
+                    box-shadow: 0 0 0 #dde6ea !important
+
+                    &:before
+                        content: '已售完'
+                        display: flex
+                        color: #2bc8f9
+                        align-items: center
+                        font-weight: bold
+                        justify-content: center
+                        width: 100%
+                        height: 100%
+                        top: 0
+                        left: 0
+                        z-index: 2
+                        position: absolute
+                        background: rgba(255,255,255,.9)
+                .column3
+                    box-shadow: 0 5px 15px #dde6ea
+                    background: #fff
+                    width: 100%
+                    padding: 15px 20px
+                    display: flex
+                    margin-bottom: 13px
+                    font-family: 'Roboto','微軟正黑體', sans-serif
+                    .left
+                        width: 100%
+                        .name
+                            font-size: 18px
+                            font-weight: bold
+                        .text
+                            color: #8d8d8d
+                            margin-top: 3px
+
+                    .right
+                        min-width: 257px
+                        margin-left: 20px
+                        display: flex
+                        align-items: center
+                        justify-content: flex-end
+
+                        .cart-group
+                            text-align: right
+                            .cart-group__price
+                                color: #b8b8b8
+                                text-decoration: line-through
+                            .cart-group__price2
+                                color: #6a6a6a
+                                font-weight: bold
+                                font-size: 20px
+
+                        .cart-number
+                            display: flex
+                            max-width: 129px
+                            border-radius: 5px
+                            border: solid 1px #dfdfdf
+                            margin-left: 10px
+
+                            .btn_minus, .btn_plus
+                                min-width: 43px
+                                height: 43px
+                                display: block
+                                cursor: pointer
+
+                            .btn_minus
+                                border-right: solid 1px #dfdfdf       
+                                background: url('../images/minimize_black_24dp.svg') no-repeat center 2px
+                                
+
+                            .btn_plus
+                                border-left: solid 1px #dfdfdf
+                                background: url('../images/add_black_24dp.svg') no-repeat center center
+                                
+
+                            .cart-number_value
+                                appearance: none
+                                border: 0
+                                outline: none
+                                width: 100%
+                                text-align: center
+                                color: #666666
+                                font-weight: bold
+
+                                &:disabled
+                                    background: none
+                                    -webkit-text-fill-color: #000
+                                    opacity: 1
+
+
+                    +rwd(768px)    
+                        flex-wrap: wrap
+                        .right
+                            width: 100%
+                            margin-left: 0
+                            justify-content: space-between
+                            padding-top: 10px
+                            border-top: solid 1px #e6e6e6
+                            margin-top: 10px
+                            .cart-group
+                                text-align: left
+
+
+            .tips
+                padding-left: 30px
+                font-weight: bold
+                background: url('../images/warning_amber_black_24dp.svg') no-repeat 0 center
+                font-family: 'Roboto','微軟正黑體', sans-serif
+                margin-top: 8px
+
+        .booking-title
+            display: flex
+            font-size: 20px
+            font-weight: bold
+            color: #000
+            align-items: center
+
+            &:after
+                content: ''
+                display: block
+                width: 20px
+                height: 2px
+                background: #2bc8f9
+                margin-left: 10px
+
+        .notice2
+            font-size: 18px
+            font-weight: bold
+            color: #666
+            padding-left: 46px
+            background: url('../images/notice.svg') no-repeat 10px 10px
+            background-size: 23px auto
+            margin-top: 10px
+
+            .icon
+                border-radius: 5px
+                padding: 7px 10px
+                display: inline-flex
+                background: #2bc8f9
+                font-size: 18px
+                font-weight: bold
+                color: #fff
+                margin-left: 5px
+
+                &:before
+                    content: ''
+                    display: block
+                    width: 27px
+                    height: 21px
+                    background: url('../images/cart.svg') no-repeat
+                    background-size: 27px auto
+                    margin-right: 5px
+                
+
+
+
+.shopping
+    .step
+        max-width: 835px
+        width: 100%
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 30px auto 90px auto
+
+        &:before, &:after
+            content: ''
+            display: block           
+            height: 5px
+            background: #f4f0ec
+            position: absolute
+            left: 50px
+            right: 50px
+            top: 33px
+        &:before
+            width: calc( 100% - 100px )
+
+        &:after
+            width: 0
+            background: #26bdf0
+
+        .step-item
+            width: 110px
+            text-align: center
+            position: relative
+            z-index: 2
+
+            .no
+                background: #f4f0ec
+                color: #cfcfcf
+                width: 51px
+                height: 51px
+                display: flex
+                align-items: center
+                justify-content: center
+                +font-size(18px)
+                font-weight: bold
+                margin: 10px auto
+                border-radius: 90%
+                border: solid 5px #fff
+                
+
+            .text
+                +font-size(18px)
+                font-weight: bold
+                color: #cfcfcf
+
+        &.step1
+            &:after
+                width: calc( 28% - 100px)
+            .step-item
+                &:nth-child(1)
+                    .no
+                        background: #26bdf0
+                        color: #fff
+                    .text
+                        color: #454545
+
+        &.step2
+            &:after
+                width: calc( 56% - 100px)
+            .step-item
+                &:nth-child(1), &:nth-child(2)
+                    .no
+                        background: #26bdf0
+                        color: #fff
+                    .text
+                        color: #454545
+
+        &.step4
+            &:after
+                width: calc( 100% - 100px)
+            .step-item
+                &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4)
+                    .no
+                        background: #26bdf0
+                        color: #fff
+                    .text
+                        color: #454545
+
+    +rwd(768px)
+        .step
+            margin: 15px auto 45px auto
+
+    +rwd(576px)
+        .step
+            .step-item
+                .text
+                    +font-size(16px)
+
+
+
+    .content
+        max-width: 1024px
+        width: 100%
+        margin: auto
+        transition: .3s ease-in
+
+        +rwd(576px)
+            .content-switch
+                max-height: 0
+                overflow: hidden
+                
+                &.current
+                    max-height: 100%
+
+        .content-title
+            display: flex
+            padding-bottom: 15px
+            border-bottom: solid 1px #c3c3c3
+            align-items: center
+            +font-size(30px)
+            font-weight: bold 
+            line-height: 1
+            
+            &:before
+                content: ''
+                display: block
+                width: 10px
+                height: 30px
+                background: #26bdf0
+                margin-right: 25px
+            
+            +rwd(768px)
+                +font-size(24px)
+                &:before
+                   margin-right: 10px
+
+            +rwd(576px)
+                +font-size(22px)
+                padding-bottom: 5px
+
+        .switch-btn
+            width: 100%
+            border: dashed 1px #000
+            padding: 10px 20px
+            color: #000
+            font-weight: bold
+            +font-size(18px)
+            justify-content: space-between
+            align-items: center
+            margin-top: 10px
+            display: none
+            margin-bottom: 10px
+
+            &:after
+                content: attr(data-open)
+                display: inline-block
+                +font-size(14px)
+                line-height: 1
+                background: #000
+                color: #26bdf0
+                border-radius: 3px
+                padding: 5px 10px
+                color: #fff
+
+            +rwd(576px)
+                display: flex
+
+
+        
+
+        .content-top
+            background: #f8f8f8
+            border-radius: 15px
+            width: 100%
+            padding: 40px 80px
+            margin: 40px 0 20px 0
+            position: relative
+
+            +rwd(999px)
+                 padding: 40px
+
+            +rwd(768px)
+                 padding: 30px
+
+            +rwd(576px)
+                margin: 10px 0
+
+            
+            .s-title
+                +font-size(20px)
+                font-weight: bold
+                color: #000
+                display: flex
+                align-items: center
+
+                &:after
+                    content: ''
+                    display: block
+                    width: 0
+                    height: 0
+                    border-style: solid
+                    border-width: 7px 6px 0 6px
+                    border-color: #000000 transparent transparent transparent
+                    margin-left: 10px
+
+                +rwd(576px)
+                    display: none
+
+            .s-box
+                display: flex
+                align-items: center
+                margin: 20px 0
+
+                .s-box-img
+                    min-width: 350px
+                    background: #fff
+                    padding: 8px
+                    box-shadow: 0 0 10px rgba(0,0,0,.2)
+                    margin-left: 10px
+
+                    img
+                        width: 100%
+                        height: auto
+                        display: block
+                    +rwd(768px)
+                        min-width: 230px
+
+                .s-box-info
+                    width: 100%
+                    padding: 0 50px
+                    display: flex
+                    justify-content: center
+                    .list
+                        .row
+                            display: flex 
+                            line-height: 1.2 
+
+                            dt
+                                white-space: nowrap                      
+
+                            dd
+                                margin: 0
+                                font-weight: bold
+                                font-family: 'Roboto','微軟正黑體', sans-serif
+
+                            +rwd(999px)
+                                &:nth-child(3)
+                                    flex-wrap: wrap
+                                    dd
+                                        width: 100%
+                                        margin-top: 10px
+                    +rwd(768px)
+                        padding: 0 25px  
+
+                +rwd(576px)
+                    flex-wrap: wrap   
+                    .s-box-img 
+                        margin-left: 0  
+
+                    .s-box-info
+                        padding: 0    
+                        .list
+                            .row
+                                &:nth-child(3)   
+                                    flex-wrap: nowrap 
+                                    dd  
+                                        margin-top: 0
+
+            .s-btm
+                .row
+                    display: flex
+                    align-items: center
+                    padding: 12px 0
+                    border-bottom: solid 1px #d3d3d3
+                    box-shadow: 0 1px 1px #fff
+
+                    .row-item
+                        width: 100%
+                        margin-right: 30px
+                        .name
+                            font-weight: bold
+                            +font-size(18px)
+                            font-family: 'Roboto','微軟正黑體', sans-serif
+                            line-height: 1.2
+                        .text
+                            color: #848484
+                            +font-size(16px)
+                            line-height: 1.2
+                            margin-top: 5px
+
+                    .price
+                        min-width: 180px
+                        display: flex
+                        font-family: 'Roboto','微軟正黑體', sans-serif
+                        color: #6a6a6a
+
+                        &:before
+                            content: 'NT$'
+                            display: block
+                            margin-right: 5px
+                            +font-size(22px)
+                           
+
+                        .num
+                            width: 100%
+                            text-align: right
+                            +font-size(22px)
+                            padding-right: 25px
+                    +rwd(576px)
+                        flex-wrap: wrap
+                        margin-right: 0
+                        .price
+                            min-width: auto
+                            margin-top: 10px
+                            .num, &:before
+                                +font-size(18px)
+                        
+            .total-price
+                display: flex
+                justify-content: flex-end
+                align-items: center
+                padding-right: 20px
+                margin-top: 20px
+
+                &:before
+                    content: '付款金額'
+                    +font-size(18px)
+                    font-weight: bold
+
+                .num
+                    +font-size(36px)
+                    color: #26bdf0
+                    font-weight: bold
+                    font-family: 'Roboto','微軟正黑體', sans-serif
+                    width: 180px
+                    text-align: right
+
+        .tips
+            color: #4c4c4c
+            margin-bottom: 10px
+
+            span
+                color: #f01010
+
+            +rwd(576px)
+                margin-top: 10px
+
+        .content-row
+            margin-bottom: 50px
+
+            .content-row-title
+                background: #000
+                height: 63px
+                align-items: center
+                padding: 0 20px
+                display: flex
+
+                .icon
+                    width: 23px
+                    height: 23px
+                    background: #fff
+                    border-radius: 90%
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    margin-right: 10px
+
+                    &:before
+                        content: ''
+                        display: block
+                        width: 0
+                        height: 0
+                        border-style: solid
+                        border-width: 5px 0 5px 9px
+                        border-color: transparent transparent transparent #000000
+
+
+                .name
+                    color: #fff
+                    +font-size(20px)
+                    font-weight: bold
+
+                +rwd(576px)
+                    padding: 10px
+                    height: auto
+                    .name
+                        +font-size(18px)
+            .content-row-title2
+                background: url('../images/person_pin_circle_black_24dp.svg') no-repeat
+                background-size: auto 30px
+                padding: 0 0 0 32px
+                margin: 25px 0 15px 0
+                +font-size(20px)
+                font-weight: bold
+                display: flex
+                line-height: 30px
+
+                .same
+                    display: inline-flex
+                    align-items: center
+                    margin-left: 25px
+                    
+
+                    input
+                        display: none
+
+                    input + label
+                        display: flex
+                        align-items: center
+                        +font-size(18px)
+                        line-height: 1.2
+                        font-weight: normal
+                        cursor: pointer
+                        
+                        span
+                            height: 22px
+                            width: 22px
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            margin: -1px 5px 0 0
+                            border: solid 1px #d9d9d9
+                            border-radius: 5px
+
+                            &:after
+                                content: ''
+                                display: none
+
+                            &:after
+                                width: 9px
+                                height: 15px
+                                border: solid #359fd0
+                                border-width: 0 3px 3px 0
+                                transform: rotate(45deg)
+                                margin: -2px 0 0 0
+                    input:checked + label
+                        
+                        span
+                            &:after
+                                display: block
+
+                +rwd(576px)
+                    .same
+                        input + label
+                            +font-size(16px)
+
+
+            .form
+                display: grid
+                grid-template-columns: repeat(2,1fr)
+                grid-template-rows: auto
+                +font-size(18px)
+
+                +rwd(576px)
+                    display: block
+                    grid-template-columns: 100%
+
+                .form_row
+                    padding: 23px 15px 23px 0
+                    display: flex
+                    align-items: center
+                    border-bottom: solid 1px #e8e8e8
+
+                    +rwd(999px)
+                        flex-wrap: wrap
+
+                    +rwd(576px)
+                        padding: 10px 0
+
+                .form_row--full
+                    grid-column-start: 1
+                    grid-column-end: 3
+                    width: 100%
+
+
+                .form_flex
+                    display: flex
+                    align-items: center
+                    width: 100%
+
+                    +rwd(576px)
+                        flex-wrap: wrap
+
+                .form_flex--wrap
+                    +rwd(768px)
+                        flex-wrap: wrap
+                        .form_field
+                            width: 100%
+                            margin-top: 5px
+                        .form_field--date-icon, .form_field--width2
+                            margin-right: 0
+
+                        .form_tips
+                            margin-left: 0
+                            margin-top: 10px
+
+                .form_flex--width
+                    max-width: 416px
+                    .form_field--width3
+                        width: 100%
+
+                .form_front--spacing
+                    letter-spacing: 0.5em
+
+                .form_front
+                    min-width: 133px
+                    white-space: nowrap
+                    padding-left: 22px
+                    position: relative
+
+                    span
+                        color: #f01010 
+                        position: absolute
+                        top: -5px
+                        letter-spacing: 0
+                        left: 98px
+
+                    +rwd(999px)
+                        padding-left: 0
+                        span
+                            left: 76px
+
+                .mark
+                    line-height: 1
+                    padding: 0 15px
+                    +rwd(576px)
+                        display: none
+
+                .form_field
+                    width: 100%
+                    border-radius: 5px
+                    background: #f1f1f1
+                    height: 52px
+                    padding: 0 10px
+                    border: 0
+                    appearance: none
+                    -webkit-appearance: none
+                    -moz-appearance: none
+                    outline: none
+
+                .form_field--date-icon
+                    background: url('../images/calendar.svg') no-repeat #f1f1f1 right 10px center
+                    background-size: 19px
+                    margin-right: 10px
+
+                    +placeholder-color(#000)
+
+                .form_field--width1
+                    width: 90px
+                    margin-left: 10px
+
+                    +rwd(576px)
+                        width: 100%
+                        margin-left: 0
+                        margin-top: 5px
+
+                .form_field--width2
+                    background: url('../images/drop-icon.svg') no-repeat #f1f1f1 right 10px center
+                    min-width: 153px
+                    width: 153px
+                    margin-right: 10px
+
+                    option
+                        background: #fff
+                        color: #666
+                
+                .form_field--width3
+                    background: url('../images/drop-icon.svg') no-repeat #f1f1f1 right 10px center
+                    min-width: 153px
+                    width: 153px
+
+                .form_field--bg
+                    margin-right: 10px
+
+                .form_tips
+                    line-height: 1.2
+                    margin-left: 15px
+                    padding: 0 0 0 26px
+                    position: relative
+
+                    &:before
+                        content: ''
+                        display: block
+                        width: 0
+                        height: 0
+                        border-style: solid
+                        border-width: 6.5px 0 6.5px 11px
+                        border-color: transparent transparent transparent #26bdf0
+                        position: absolute
+                        left: 3px
+                        top: 3px
+
+            .form.complete
+                .form_field
+                    line-height: 52px
+
+            .form2
+                width: 100%
+                +font-size(18px)
+                grid-template-columns: repeat(3,1fr)
+                padding: 25px
+                border: solid 1px #e8e8e8
+                grid-template-rows: auto
+                display: grid
+                grid-gap: 25px
+
+                +rwd(768px)
+                    grid-template-columns: repeat(2,1fr)
+                
+                +rwd(576px)
+                    display: block
+                    padding: 20px
+
+                .form_row
+                    +rwd(576px)
+                        margin-bottom: 5px
+                    .front
+                        span
+                             color: #f01010 
+
+                    .form_field
+                        width: 100%
+                        border-radius: 5px
+                        background: #f1f1f1
+                        height: 52px
+                        padding: 0 10px
+                        border: 0
+                        appearance: none
+                        -webkit-appearance: none
+                        -moz-appearance: none
+                        outline: none
+
+                    .form_field--date-icon
+                        background: url('../images/calendar.svg') no-repeat #f1f1f1 right 10px center
+                        background-size: 19px
+                        margin-right: 10px
+            .form2.complete
+                .form_field
+                    line-height: 52px
+            .form-field2
+                padding: 10px 20px
+                height: 210px
+                border: solid 1px #e8e8e8
+                width: 100%
+                margin-top: 20px
+                outline: none
+                +font-size(18px)
+                +placeholder-color(#c7c7c7)
+    
+    .shopping-complete
+        font-family: 'Roboto','微軟正黑體', sans-serif
+       
+        .complete-title
+            +font-size(30px)
+            font-weight: bold
+            text-align: center
+
+        .complete-content-width01
+            max-width: 625px
+
+            +rwd(665px)
+                .text
+                    br
+                        display: none
+
+        .complete-content-width02
+            max-width: 855px
+            +rwd(895px)
+                .text
+                    br
+                        display: none
+
+        .complete-content
+            +font-size(18px)
+            margin: auto
+            .order-id
+                
+                font-weight: bold
+                margin: 60px 0 20px 0
+                span
+                    color: #ff9000
+            .text
+                margin-bottom: 50px
+
+                p
+                    margin-bottom: 20px
+
+                    &:last-child
+                        margin-bottom: 0
+
+                
+                        
+                
+            
+
+    .shopping-btn
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-bottom: 50px
+
+        .btn_item
+            width: 173px
+            height: 50px
+            border-radius: 5px
+            +font-size(20px) 
+            font-weight: bold
+            color: #fff  
+            display: flex
+            align-items: center
+            justify-content: center  
+            border: none
+
+        .btn_item--color1  
+            background: #26bdf0
+            margin-right: 12px
+
+        .btn_item--color2 
+            background: #d3d3d3
+            margin-left: 12px
+                        
+
++rwd($gridSm + 'px')
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+

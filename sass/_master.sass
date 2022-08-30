@@ -1,0 +1,668 @@
+//This is sass file
+/*===================layout===================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap')
+@font-face
+	font-family: 'icomoon'
+	src:  url('../fonts/icomoon.eot?d1u38q')
+	src:  url('../fonts/icomoon.eot?d1u38q#iefix') format('embedded-opentype'),url('../fonts/icomoon.ttf?d1u38q') format('truetype'),url('../fonts/icomoon.woff?d1u38q') format('woff'),url('../fonts/icomoon.svg?d1u38q#icomoon') format('svg')
+	font-weight: normal
+	font-style: normal
+	font-display: block
+
+*
+	box-sizing: border-box
+
+body
+	font-family: $font
+	color: $textColor
+	background-color: $mainColor1
+	line-height: $fontLh
+	font-size: $fontSz
+	position: relative
+	letter-spacing: 0
+	-webkit-text-size-adjust: none
+	
+
+.body-hidden
+	height: 100%
+	overflow: hidden
+a
+	color: $textColor
+	text-decoration: none
+	transition: all .3s ease-out
+	&:hover
+		color: $textHColor
+		text-decoration: none
+		transition: all .3s ease-out
+
+.all-width
+	width: 100%
+	max-width: #{$wrapWidth}px
+	margin: auto
+	+rwd($wrapWidth + 60 + 'px')
+		padding: 0 30px
+	
+.hide
+	display: none
+.flex
+	display: flex
+.edit
+	img,iframe
+		max-width: 100%
+		height: auto
+	table
+		width: 100%
+		max-width: 100%
+
+/*IE 滿版背景圖晃動 */
+@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none)
+	html
+		overflow: hidden
+		height: 100%
+	body
+		overflow: auto
+		height: 100%
+
+@keyframes scrolltop
+	0%
+		background-position: 0 80px
+
+	75%
+		background-position: 0 0
+
+	100%
+		background-position: 0 -80px
+
+
+.wrapper
+	padding: 100px 0 0 0
+	position: relative
+	z-index: 4
+
+	+rwd($gridMd + 'px')
+		padding: 80px 0 0 0
+
+	+rwd($gridSm + 'px')
+
+.search-box
+	position: absolute
+	bottom: -80px
+	right: 30px
+	width: 378px
+	padding: 20px 30px 20px 60px
+	background: url('../images/musica-searcher.svg') no-repeat 18px center #fff
+	background-size: 23px
+	border-radius: 5px
+	box-shadow: 0 5px 10px rgba(0,0,0,.05)
+	opacity: 0
+	visibility: hidden
+	transition: .3s ease-in
+
+	.text
+		appearance: none
+		border: 0
+		background: none
+		font-weight: 600
+		+placeholder-color(#c1c1c1)
+		width: 100%
+
+		&:focus
+			outline: none
+	
+	&.current
+		opacity: 1
+		visibility: visible
+		bottom: -90px
+
+	+rwd($gridSm + 'px')
+		width: calc( 100% - 60px )
+		left: 30px
+
+		.text
+			+font-size(14px)
+
+.scroll-top	
+	position: absolute
+	right: 20px
+	top: -40px
+	z-index: 5
+	color: #fff
+	width: 20px
+	justify-content: center
+	flex-wrap: wrap
+	color: #9e9e9e
+	cursor: pointer
+	transition: .3s ease-in
+
+	span
+		writing-mode: vertical-rl
+
+	.scroll
+		width: 1px
+		height: 80px
+		background: #9e9e9e
+		position: relative
+		overflow: hidden
+		margin: 0 0 20px 0
+
+		.scroll-line
+			width: 100%
+			height: 100%
+			display: block
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(4, 15, 48, 0) 50%)
+			background-position: 0 -80px
+			background-size: 100% 200%
+			animation: scrolltop 3s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite
+
+header
+	width: 100%
+	height: 100px
+	background: #fff
+	position: fixed
+	left: 0
+	top: 0
+	z-index: 10
+	align-items: center
+	justify-content: space-between
+	padding: 0 30px
+
+	.logo
+		flex-basis: 220px
+		img
+			width: 100%
+			height: auto
+			display: block
+
+		+rwd($gridMd + 'px')
+			flex-basis: 180px
+
+		+rwd($gridSm + 'px')
+			flex-basis: 150px
+
+	nav
+		height: inherit
+		flex-basis: auto
+		.nav-list
+			align-items: center
+			height: inherit
+
+		.nav-list_item
+			height: inherit
+			display: table-cell
+			vertical-align: middle
+			+font-size(18px)
+			font-weight: 600
+			letter-spacing: 0.02em
+			position: relative
+
+			a
+				display: block
+				padding: 0 22px
+
+			&:before
+				display: block
+				content: ''
+				width: 100%
+				opacity: 0
+				height: 7px
+				position: absolute
+				left: 0
+				bottom: 0
+				background: #e24242
+				transition: .3s ease-in
+
+			&:hover
+				a
+					color: #e24242
+
+				&:before
+					opacity: 1
+
+				a.nav_inner-link
+					color: #000
+					&:hover
+						color: #e24242
+						span
+							transform: translateX(2px)
+						&:after
+							border: solid 1px #e24242
+							border-width: 1px 1px 0 0
+
+				.nav_inner
+					top: 93px
+					opacity: 1
+					visibility: visible
+
+		.nav_inner
+			position: absolute
+			top: 100px
+			left: 50%
+			transform: translateX(-50%)
+			border-top: solid 8px #e24242
+			width: 306px
+			background: #fff
+			opacity: 0
+			visibility: hidden
+			transition: .3s ease-in
+
+		a.nav_inner-link
+			+font-size(16px)
+			padding: 20px 30px
+			border-bottom: solid 1px #e5e5e5
+			font-weight: normal
+			align-items: center
+			display: flex
+			justify-content: space-between
+			
+			*
+				transition: .3s ease-in
+				
+
+			&:after
+				content: ''
+				display: block
+				width: 8px
+				height: 8px
+				border: solid 1px #000
+				transform: rotate(45deg)
+				border-width: 1px 1px 0 0
+
+		+rwd($gridLg + 'px')
+			position: fixed
+			width: 100%
+			left: 0
+			top: 110px
+			background: #d0111b	
+			height: auto
+			padding: 10px 30px 20px 30px
+			opacity: 0
+			visibility: hidden
+			transition: .2s ease-in
+
+			.nav-list
+				height: auto
+				
+				.nav-list_item
+					display: block
+					width: 100%	
+					a	
+						color: #fff
+						padding: 15px 5px
+						+font-size(18px)
+						border-bottom: solid 1px #f34c55
+						display: flex
+						justify-content: space-between
+						align-items: center
+
+						&:after
+							content: ''
+							display: block
+							width: 8px
+							height: 8px
+							border: solid 1px #fff
+							transform: rotate(45deg)
+							border-width: 1px 1px 0 0
+			
+				.nav_inner
+					display: none
+			
+			&.current
+				top: 100px
+				opacity: 1
+				visibility: visible
+
+		+rwd($gridMd + 'px')
+			top: 90px
+			&.current
+				top: 80px
+
+	.head-right
+		flex-basis: auto
+
+		.link
+			margin-right: 15px
+			.link-item
+				margin: 0 7px
+				.icon
+					width: 28px
+					height: 28px
+					display: block
+					
+					&:hover
+						transform: translateY(3px)
+
+				.icon--bg1
+					background: url('../images/YT.svg') no-repeat center
+					background-size: contain
+
+				.icon--bg2
+					background: url('../images/LINE.svg') no-repeat center
+					background-size: contain
+
+				.icon--bg3
+					background: url('../images/twitter.svg') no-repeat center
+					background-size: contain
+
+				.icon--bg4
+					background: url('../images/whatsapp.svg') no-repeat center
+					background-size: contain
+
+				.icon--bg5
+					background: url('../images/fb.svg') no-repeat center
+					background-size: contain
+
+		.link2
+			align-items: center
+			border-left: solid 1px #cbcbcb
+			.search-btn
+				width: 28px
+				height: 28px
+				display: block
+				background: url('../images/musica-searcher.svg') no-repeat center center
+				background-size: 23px 23px
+				margin: 0 17px
+			.language
+				align-items: center
+				&:before
+					content: ''
+					display: block
+					width: 28px
+					height: 28px
+					background: url('../images/grobal.svg') no-repeat
+					background-size: contain
+					margin-right: 7px
+
+			+rwd($gridSm + 'px')
+				.search-btn
+					width: 20px
+					height: 20px
+					display: block
+					background: url('../images/musica-searcher.svg') no-repeat center center
+					background-size: 20px 20px
+					margin: 0 10px
+					
+				.language
+					align-items: center
+					+font-size(14px)
+					&:before
+						width: 20px
+						height: 20px
+						background: url('../images/grobal.svg') no-repeat
+						background-size: contain
+						margin-right: 5px
+		.mobile-btn
+			width: 40px
+			height: 40px
+			position: relative
+			display: none
+			margin-left: 10px
+			align-items: center
+			justify-content: center
+			cursor: pointer
+
+			.mobile-btn__burger
+				width: 20px
+				height: 3px
+				background: #000
+				border-radius: 5px
+				transition: all 0.5s ease-in-out
+
+				&:before, &:after
+					content: ''
+					display: block
+					background: #000
+					width: 20px
+					height: 3px
+					position: absolute
+					border-radius: 5px
+					transition: all 0.5s ease-in-out
+			
+				&:before
+					transform: translateY(-6px)
+
+				&:after
+					transform: translateY(6px)
+
+			&.current
+				display: flex
+				.mobile-btn__burger
+					transform: translateX(-15px)
+					background: transparent
+
+					&:before
+						transform: rotate(45deg) translate(10px, -10px)
+
+					&:after
+						transform: rotate(-45deg) translate(10px, 10px)
+
+
+		+rwd($gridLg + 'px')
+			align-items: center
+
+			.mobile-btn
+				display: flex		
+
+		+rwd($gridMd + 'px')
+			.link
+				display: none
+			.link2
+				border-left: none
+
+	+rwd($gridLg + 'px')
+		box-shadow: 0 10px 20px rgba(0,0,0,.05)
+
+	+rwd($gridMd + 'px')
+		height: 80px
+
+	+rwd($gridSm + 'px')
+		padding: 0 15px
+
+footer
+	background: #2d2d2d
+	width: 100%
+	position: relative
+	z-index: 3
+
+	.foot-in
+		margin: auto
+		width: 100%
+		max-width: 83%
+		display: grid
+		grid-template-columns: 45% 39% 16%
+		padding: 60px 15px 85px 15px
+
+		.foot-in-area
+			.logo
+				max-width: 235px
+				min-width: 235px
+				img
+					width: 100%
+					height: auto
+					display: block
+
+			.list
+				padding-top: 20px
+				li
+					color: #bababa
+					margin: 10px 0
+
+				+rwd($gridMd + 'px')
+					display: none
+
+
+		.foot-in-title
+			display: inline-block
+			padding: 25px 60px 25px 0
+			color: #fff
+			+font-size(24px)
+			position: relative
+			font-weight: 600
+
+			&:before, &:after
+				content: ''
+				display: block			
+				height: 1px
+				position: absolute
+				bottom: 0
+				left: 0
+
+			&:before
+				background: #575757
+				z-index: 1
+				width: 100%
+
+			&:after
+				background: #f85858
+				z-index: 2
+				width: 20px
+
+		.foot-in-list
+			display: grid
+			grid-template-columns: repeat(2,1fr)
+			grid-template-rows: repeat(3,1fr)
+			grid-gap: 10px
+			font-weight: 600
+			margin-top: 18px
+			grid-auto-flow: column
+
+			a
+				color: #636363
+				align-items: center
+				+font-size(18px)
+
+				&:before
+					content: ''
+					background: #636363
+					display: block
+					width: 5px
+					height: 2px
+					margin-right: 7px
+
+				&:hover
+					color: #fff
+
+			+rwd($gridLg2 + 'px')
+				display: block
+				a
+					margin-bottom: 10px
+
+		.foot-in-link
+			margin-top: 17px
+			.link-item
+				margin: 0 7px
+				.icon
+					width: 28px
+					height: 28px
+					display: block
+
+				.icon--bg1
+					background: url('../images/YT2.svg') no-repeat center
+					background-size: contain
+
+				.icon--bg2
+					background: url('../images/LINE2.svg') no-repeat center
+					background-size: contain
+
+				.icon--bg3
+					background: url('../images/twitter2.svg') no-repeat center
+					background-size: contain
+
+				.icon--bg4
+					background: url('../images/whatsapp2.svg') no-repeat center
+					background-size: contain
+
+				.icon--bg5
+					background: url('../images/fb2.svg') no-repeat center
+					background-size: contain
+		+rwd($gridXL + 'px')
+			max-width: 90%
+
+		+rwd($gridXL2 + 'px')
+			grid-column-gap: 50px
+			max-width: 100%
+			padding: 60px 30px 85px 30px
+			.foot-in-area
+				&:nth-child(3)
+					display: flex
+					align-items: center
+					grid-column-start: 1
+					grid-column-end: 3
+
+					.foot-in-title
+						display: none
+
+					.foot-in-link
+						margin-top: 20px
+
+					.logo
+						margin-right: 20px	
+
+		+rwd($gridMd + 'px')
+			display: block
+			padding: 30px 0 45px 0
+			.foot-in-area
+				width: 100%
+				&:nth-child(2)
+					display: none
+				.logo
+					margin: auto
+					max-width: 180px
+					min-width: 180px
+
+				.foot-in-link
+					width: 100%
+					justify-content: center
+
+	.foot-btm
+		border-top: solid 1px #636363
+		padding: 38px 0
+		align-items: center
+		justify-content: space-between
+		color: #646464
+		margin: auto
+		width: 100%
+		max-width: 83%
+
+		.copyright
+			font-weight: 600
+			a
+				color: #646464
+
+				&:hover
+					color: #fff
+
+		
+		.foot-btm-link
+			align-items: center
+			a
+				color: #646464
+				display: inline-block
+				padding: 0 20px
+
+				&:hover
+					color: #fff
+
+			
+		+rwd($gridXL + 'px')
+			max-width: 92%
+
+		+rwd($gridXL2 + 'px')
+			max-width: 100%
+			padding: 38px 30px
+
+		+rwd($gridLg2 + 'px')
+			.foot-btm-link
+				display: none
+
+		+rwd($gridMd + 'px')
+			justify-content: center
+			padding: 15px 0
+
+		+rwd($gridSm + 'px')
+			+font-size(14px)
+			text-align: center
+			.copyright
+				.text
+					display: block
+

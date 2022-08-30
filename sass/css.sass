@@ -1,0 +1,2475 @@
+﻿//This is sass file
+@import default
+@import master
+
+@keyframes scrolldown1
+	0%
+		background-position: 0 -80px
+
+	75%
+		background-position: 0 0
+
+	100%
+		background-position: 0 80px
+
+
+@keyframes scrolldown
+	0%
+		background-position: 0 -80px
+
+	75%
+		background-position: 0 0
+
+	100%
+		background-position: 0 80px
+
+@keyframes zoomslide
+	0%
+		transform: scale(1.2)
+
+	100%
+		transform: scale(1)
+
+.slick-arrow
+	width: 75px
+	height: 75px
+	border-radius: 90%		
+	top: 50%
+	transform: translateY(-50%)	
+	box-shadow: 0 0 30px rgba(0,0,0,.1)
+
+	+rwd($gridLg + 'px')
+		width: 50px !important
+		height: 50px !important
+
+	+rwd($gridSm + 'px')
+		width: 30px !important
+		height: 30px !important
+
+
+.slick-prev
+	left: -100px
+	background: url('../images/arrow.svg') no-repeat #fff center
+	background-size: 30px
+
+	+rwd($gridLg + 'px')
+		left: -60px
+
+	+rwd($gridMd + 'px')
+		left: -30px
+	
+	+rwd($gridSm + 'px')
+		left: -25px
+		background-size: 20px
+
+.slick-next
+	right: -100px
+	background: url('../images/arrow.svg') no-repeat #fff center
+	background-size: 30px
+	transform: translateY(-50%)	rotate(-180deg)
+
+	+rwd($gridLg + 'px')
+		right: -60px
+
+	+rwd($gridMd + 'px')
+		right: -30px
+
+	+rwd($gridSm + 'px')
+		right: -25px
+		background-size: 20px
+
+.noscroll
+	overflow: hidden
+
+.filter-btn
+	position: fixed
+	bottom: 0
+	left: 0
+	width: 100%
+	height: 50px
+	background: #d0111b
+	display: none
+	color: #fff
+	justify-content: center
+	align-items: center
+	font-weight: 600
+	z-index: 5
+
+	&:before
+		content: ''
+		display: block
+		background: url('../images/filter.svg') no-repeat center
+		background-size: contain
+		width: 24px
+		height: 24px
+		margin-right: 5px
+
+	&:after
+		content: ''
+		display: block
+		background: url('../images/close.svg') no-repeat center
+		background-size: contain
+		width: 24px
+		height: 24px
+		margin-right: 5px
+		display: none
+
+	+rwd($gridLg + 'px')
+		display: flex
+
+		&.current
+			&:before
+				display: none
+
+			&:after
+				display: block
+
+
+.wrapper--padding
+	+rwd($gridLg + 'px')
+		padding-bottom: 50px
+
+.page
+	width: 100%
+	.page-banner
+		position: relative
+
+		.banner-wrap
+			width: 100%
+			overflow: hidden
+			position: relative
+		img
+			width: 100%
+			height: auto
+			display: block
+			position: relative
+			z-index: 1
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+
+		.title
+			width: 44%
+			height: 223px
+			background: #d0111b
+			position: absolute
+			z-index: 2
+			left: 0
+			bottom: 0
+			transform: translateY(50%)
+			padding-left: 16.1%
+			align-items: center
+			color: #fff
+			+font-size(30px)
+			font-weight: bold
+			justify-content: space-between
+
+			&:after
+				content: ''
+				display: block
+				width: 100%
+				height: 1px
+				background: #fff
+				margin-left: 50px
+				max-width: 220px
+
+		+rwd($gridXL2 + 'px')
+			.title
+				height: 180px
+				+font-size(24px)
+				padding-left: 12%
+
+		+rwd($gridXL + 'px')
+			height: 250px
+			img
+				width: auto
+				height: 250px
+
+		+rwd($gridLg2 + 'px')
+			.title
+				width: 60%
+				height: 150px
+				+font-size(20px)
+				padding-left: 10%
+
+		+rwd($gridSm + 'px')
+			height: 180px
+			img
+				width: auto
+				height: 180px
+			.title
+				width: 60%
+				height: 80px
+				+font-size(16px)
+				padding-left: 30px
+
+
+	.page-main
+		width: 100%
+		background: url('../images/bg1.jpg') no-repeat
+		background-size: 100% auto
+
+		.all-width
+			max-width: (1300/1920)*100%
+			width: 100%
+			margin: auto
+
+			#breadcrumb
+				padding-left: 560px
+				justify-content: flex-end
+				align-items: center
+				min-height: 111px
+				flex-wrap: wrap
+				align-content: center
+
+				li
+					display: inline-block
+					margin: 3px 0 3px 30px
+					position: relative
+
+
+					&:first-child
+						display: flex
+						align-items: center
+
+						&:before
+							content: ''
+							display: block
+							width: 16px
+							height: 16px
+							background: url('../images/home.svg') no-repeat center
+							background-size: contain
+							margin: -2px 3px 0 0
+
+					&:after
+						content: ''
+						display: block
+						width: 1px
+						height: 15px
+						transform: rotate(20deg)
+						position: absolute
+						top: 3px
+						right: -15px
+						background: #666
+
+					&:last-child
+						font-weight: 600
+						&:after
+							display: none
+
+					a
+						color: #666
+
+						&:hover
+							text-decoration: underline
+
+			+rwd(1920 + 'px')
+
+				max-width: 1300px
+
+			+rwd(1420 + 'px')
+				max-width: 100%
+				padding: 0 60px
+
+			+rwd($gridXL2 + 'px')
+				#breadcrumb
+					min-height: 90px
+
+			+rwd($gridXL + 'px')
+				#breadcrumb
+					display: none
+
+			+rwd($gridLg + 'px')
+				padding: 0 30px
+
+			+rwd($gridSm + 'px')
+				padding: 0 15px
+
+
+	.related
+		width: 100%
+		background: #f1f1f1
+		padding: 30px 0 60px 0
+
+		.title
+			+font-size(30px)
+			text-align: center
+			color: #000
+			font-weight: 600
+			padding: 55px 0 20px 0
+
+		.related-product	
+			margin: 0 auto
+			max-width: calc((1300/1920)*100% + 26px)	
+
+			.slick-slide
+				overflow: hidden
+				
+			.item
+				background: #fff
+				width: calc( 100% - 26px )
+				box-shadow: 0 10px 20px rgba(0,0,0,.05)
+				margin: 30px 13px
+				position: relative
+				padding: 48px 25px
+				transition: .3s ease-in
+				
+				a
+					display: block
+					position: absolute
+					width: 100%
+					height: 100%
+					top: 0
+					left: 0
+					z-index: 2
+					overflow: hidden
+					text-indent: -9999px
+
+				figure
+					position: relative
+					z-index: 1
+					width: 100%
+					padding-bottom: 100%
+
+					img
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: auto
+
+				.no
+					font-weight: 600
+					color: #d0111b
+					text-align: center
+					margin-top: 33px
+						
+
+				.name
+					width: 100%
+					text-align: center
+					+font-size(18px)
+					font-weight: 600
+					margin-top: 5px
+					padding: 0 15px
+					transition: .3s ease-in
+
+				&:hover
+					transform: translateY(-5px)
+					.name
+						color: #e24242
+
+			+rwd($gridXL + 'px')
+				max-width: 80%
+				.item
+					.name
+						+font-size(16px)
+
+			+rwd($gridMd + 'px')
+				padding: 0 30px
+
+			+rwd($gridSm + 'px')
+				padding: 0 15px	
+
+.page-padding
+	padding: 97px 0
+
+	+rwd($gridXL + 'px')
+		padding: 150px 0 60px 0
+
+	+rwd($gridSm + 'px')
+		padding: 90px 0 60px 0
+
+
+.product--layout
+	width: 100%
+	justify-content: space-between
+
+	+rwd($gridLg + 'px')
+		flex-wrap: wrap
+	
+.product
+	width: 100%
+	.list
+		display: grid
+		grid-template-columns: repeat(3,1fr)
+		grid-template-rows: auto
+		grid-gap: 68px
+
+		.list-item
+			background: #fff
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			position: relative
+			padding: 33px 30px 55px 30px
+			transition: .3s ease-in
+
+			a
+				display: block
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				z-index: 2
+				overflow: hidden
+				text-indent: -9999px
+
+			figure
+				position: relative
+				z-index: 1
+				width: 100%
+				padding-bottom: 79%
+				max-width: 79%
+				margin: 0 auto
+
+				img
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: auto
+
+			.name
+				text-align: center
+				margin-top: 33px
+				font-weight: 600
+				+font-size(20px)
+
+			&:hover
+				transform: translateY(-5px)
+				.name
+					color: #e24242
+
+		+rwd($gridXL2 + 'px')
+			grid-gap: 30px
+
+		+rwd($gridXL + 'px')
+			.list-item
+				.name
+					+font-size(18px)
+
+		+rwd($gridLg2 + 'px')
+			grid-template-columns: repeat(2,1fr)
+
+		+rwd($gridSm + 'px')
+			grid-gap: 15px
+			.list-item
+				padding: 25px 20px 35px 20px
+				figure
+					padding-bottom: 100%
+					max-width: 100%
+				.name
+					+font-size(16px)
+
+		+rwd($gridSmm + 'px')
+			grid-template-columns: 1fr
+
+
+	.sidebar_position
+		+rwd($gridLg + 'px')
+			width: 100%
+		
+	.sidebar
+		width: 316px
+		position: -webkit-sticky
+		position: sticky
+		top: 120px
+
+		.title
+			+font-size(22px)
+			font-weight: 600
+			padding: 20px 0
+
+		.category
+			.item
+				width: 100%			
+				margin-bottom: 2px
+
+				&.current
+					margin-bottom: 22px
+					.item-link
+						background: #d0111b
+						color: #fff
+						&:after
+							border: solid 1px #fff
+							border-width: 1px 1px 0 0
+
+			.item-link
+				padding: 0 20px
+				width: inherit
+				height: 66px
+				font-weight: 600
+				align-items: center
+				justify-content: space-between
+				background: #f7f7f7
+
+				&:after
+					content: ''
+					display: block
+					min-width: 8px
+					width: 8px
+					height: 8px
+					border: solid 1px #000
+					transform: rotate(45deg)
+					border-width: 1px 1px 0 0
+					margin-left: 20px
+					
+
+			.item-list
+				a
+					display: block
+					padding: 20px
+					border-bottom: solid 1px #bcbcbc
+
+		+rwd($gridXL + 'px')
+			width: 250px
+
+		+rwd($gridLg + 'px')
+			width: 100%
+			.title
+				padding: 0 0 10px 0
+
+			.category
+				display: flex
+				overflow-x: auto
+				width: 100%
+				position: relative
+				top: 0
+				padding: 0 0 20px 0
+
+				.item-list
+					display: none
+				.item
+					margin-right: 5px
+
+					.item-link
+						white-space: nowrap
+						height: 50px
+
+		+rwd($gridSm + 'px')
+			.title
+				+font-size(18px)
+			.category
+				.item
+					.item-link
+						+font-size(14px)
+
+	.content
+		width: calc( 100% - 370px )
+
+		+rwd($gridXL + 'px')
+			width: calc( 100% - 280px )
+
+		+rwd($gridLg + 'px')
+			width: 100%
+
+	.filter
+		margin-bottom: 36px
+
+
+		.filter-title
+			+font-size(22px)
+			font-weight: 600
+			padding: 20px 0
+			span
+				color: #d0111b
+				padding-right: 5px
+
+		.filter-box
+			display: grid
+			grid-template-columns: repeat(3,auto)
+			grid-column-gap: 50px
+			padding: 40px 5%
+			border: solid 1px #e6e6e6
+			background: #fff
+			width: 100%
+
+			+rwd($gridXL2 + 'px')
+				padding: 40px
+
+		.filter-box-title
+			+font-size(18px)
+			font-weight: 600
+
+		.checkbox-group
+			color: #747474
+			margin-top: 25px
+			.item
+				width: 100%
+				padding: 10px 0
+
+				input
+					display: none
+
+				input + label
+					span
+						height: 24px
+						width: 24px
+						min-width: 24px
+						display: inline-flex
+						position: relative
+						justify-content: center
+						align-items: center
+						vertical-align: middle
+						margin: -3px 0 0 0
+						border: solid 1px #cecece
+						margin-right: 10px
+						transition: 0.2s ease-in
+
+						&:after
+							content: ''
+							display: none
+
+						&:after
+							content: ''
+							background: url('../images/check.svg') no-repeat
+							width: 15px
+							height: 11px
+							background-size: 15px 11px
+				input:hover + label
+					span
+						border: solid 1px #ff3427
+
+				input:checked + label
+					span
+						border: solid 1px #ff3427
+						background: #ff3427
+						&:after
+							display: block               
+				label
+					display: flex
+					+font-size(16px)
+					cursor: pointer
+					line-height: 18px
+					white-space: nowrap
+
+					+rwd($gridXL2 + 'px')
+						white-space: normal
+					
+				input
+					vertical-align: middle
+					margin-top: -3px
+
+		.keywords-input
+			appearance: none
+			border: solid 1px #cecece
+			padding: 0 20px
+			height: 56px
+			margin: 25px 0 20px 0
+			min-width: 250px
+
+		.search-btn1
+			width: 96px
+			border-radius: 5px
+			height: 48px
+			appearance: none
+			background: #d0111b
+			color: #fff
+			border: none
+			font-weight: 600
+
+		+rwd($gridLg + 'px')
+			position: fixed
+			bottom: 50px
+			left: 0
+			opacity: 0
+			visibility: hidden
+			background: #fff
+			z-index: 10
+			margin-bottom: 0
+			height: calc( 100vh - 130px )
+			height: calc(var(--vh, 1vh) * 100 - 130px)
+			overflow: auto
+			padding: 0 30px 30px 30px
+			width: 100%
+			transition: .3s ease-in
+
+			.filter-box
+				padding: 30px
+				grid-template-columns: 1fr
+
+			.keywords-input
+				min-width: inherit
+				width: 100%
+			
+			.checkbox-group
+				margin-top: 10px
+				margin-bottom: 20px
+				.item
+					label
+						white-space: normal
+
+
+			.search-btn
+				width: 100%
+
+			&.current
+				opacity: 1
+				visibility: visible
+
+
+	.list2
+		display: grid
+		grid-row-gap: 36px
+		.list2-item
+			background: #fff
+			padding: 34px 55px 34px 25px
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+
+			figure
+				position: relative
+				z-index: 1
+				width: 100%
+				padding-bottom: 350px
+				max-width: 350px
+				margin: 0 auto
+
+				img
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: auto
+
+			.info
+				width: 100%
+				padding: 40px 0 55px 0
+				margin-left: 18px
+				position: relative
+
+				.name
+					+font-size(24px)
+					font-weight: 600
+					display: block
+					margin-bottom: 20px
+					max-width: 450px
+
+				.text
+					color: #666666
+					+ellipsis(3)
+					+font-size2(16px,24px)
+
+				.more
+					bottom: 40px
+					position: absolute
+					left: 0
+					text-decoration: underline
+		+rwd($gridLg + 'px')
+			grid-gap: 30px
+			.list2-item
+				figure
+					padding-bottom: 34%
+					max-width: 34%
+
+				.info
+					.more
+						position: relative
+						bottom: inherit
+						margin-top: 20px
+						display: block
+
+		+rwd($gridMd + 'px')
+			.list2-item
+				align-items: center
+				figure
+					padding-bottom: 200px
+					max-width: 200px
+					min-width: 200px
+
+				.info
+					padding: 20px 0
+					.name
+						+font-size(18px)
+						margin: 0
+
+					.text, .more
+						display: none
+
+		+rwd($gridSm + 'px')
+			grid-template-columns: repeat(2,1fr)
+			grid-gap: 15px
+			
+			.list2-item
+				flex-wrap: wrap
+				padding: 15px
+
+				figure
+					padding-bottom: 100%
+					max-width: 100%
+					min-width: auto
+
+				.info
+					width: 100%
+					.name
+						+font-size(16px)
+		
+		+rwd($gridSmm + 'px')
+			grid-template-columns: 1fr
+
+	.top
+		border-bottom: solid 1px #dddddd
+		margin-bottom: 50px
+
+		.top-title
+			+font-size(36px)
+			font-weight: bold
+			color: #000
+			margin-bottom: 30px
+
+			.color1
+				color: #d0111b
+
+		.top-title--small
+			+font-size(20px)
+			font-weight: normal
+			.color1
+				font-weight: bold	
+		
+		.text
+			color: #757575
+			margin-bottom: 30px
+
+		+rwd($gridLg + 'px')
+			.top-title
+				+font-size(30px)
+
+			.top-title--small
+				+font-size(18px)
+
+		+rwd($gridSm + 'px')
+			.top-title
+				+font-size(24px)
+			.text
+				display: none
+			.top-title--small
+				+font-size(16px)
+
+	.result-num
+		font-weight: 600
+		margin-bottom: 30px
+
+	.list3
+		display: grid
+		grid-template-columns: repeat(4,1fr)
+		grid-template-rows: auto
+		grid-gap: 30px
+
+		.list-item
+			background: #fff
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			position: relative
+			padding: 33px 0 55px 0
+			transition: .3s ease-in
+
+			a
+				display: block
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				z-index: 2
+				overflow: hidden
+				text-indent: -9999px
+
+			figure
+				position: relative
+				z-index: 1
+				width: 100%
+				padding-bottom: 250px
+				max-width: 250px
+				margin: 0 auto
+
+				img
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: auto
+
+			.no
+				font-weight: 600
+				color: #d0111b
+				text-align: center
+				margin-top: 33px
+
+			.name
+				text-align: center
+				margin-top: 5px
+				font-weight: 600
+				+font-size(18px)
+				padding: 0 40px
+				display: block
+
+			&:hover
+				transform: translateY(-5px)
+				.name
+					color: #e24242
+
+		+rwd($gridXL2 + 'px')
+			grid-gap: 30px
+
+		+rwd($gridXL + 'px')
+			.list-item
+				.name
+					+font-size(18px)
+
+		+rwd($gridXL2 + 'px')
+			grid-template-columns: repeat(3,1fr)
+		
+		+rwd($gridLg + 'px')
+			.list-item
+				padding: 25px 20px 35px 20px
+
+		+rwd($gridLg2 + 'px')
+			grid-template-columns: repeat(2,1fr)
+
+		+rwd($gridMd + 'px')
+			.list-item
+				figure
+					padding-bottom: 100%
+					max-width: 100%
+				.name
+					padding: 0
+
+		+rwd($gridSm + 'px')
+			grid-gap: 15px
+			.list-item
+				padding: 15px
+				.no
+					margin-top: 15px
+				.name
+					+font-size(16px)
+
+		+rwd($gridSmm + 'px')
+			grid-template-columns: 1fr
+
+	.detail-top
+		background: #fff
+		box-shadow: 0 10px 20px rgba(0,0,0,.05)
+		padding: 45px
+		position: relative
+
+		.detail-top-img
+			width: 52.3%
+				
+			.slider
+				max-width: 74%
+				width: 100%
+				margin: auto
+
+				img
+					width: 100%
+					height: auto
+					display: block
+
+			.slider2
+				max-width: 100%
+				width: 100%
+				margin: 40px auto 0
+
+				
+				img
+					width: 100%
+					height: auto
+					display: block
+					opacity: .5
+					cursor: pointer
+					border: solid 1px #fff
+
+				.slick-current
+					img
+						border: solid 1px #cbcbcb
+						opacity: 1
+
+		.detail-top-info
+			width: 47.7%
+			.share
+				justify-content: flex-end
+				align-items: center
+				margin-bottom: 40px
+
+				.tit
+					+font-size(14px)
+					font-weight: 600
+					color: #b8b8b8
+					padding: 0 19px 0 0
+
+				a
+					display: block
+					width: 28px
+					height: 28px
+					margin: 0 7px
+
+					&.fb
+						background: url('../images/fb.svg') no-repeat center
+						background-size: contain
+
+					&.twitter
+						background: url('../images/twitter.svg') no-repeat center
+						background-size: contain
+
+					&.in
+						background: url('../images/linkedin.svg') no-repeat center
+						background-size: contain
+
+					&.LINE
+						background: url('../images/LINE.svg') no-repeat center
+						background-size: contain
+
+					&.mail
+						background: url('../images/email.svg') no-repeat center
+						background-size: contain
+
+					&.copy
+						background: url('../images/copy.svg') no-repeat center
+						background-size: contain
+
+					&:hover
+						transform: translateY(3px)
+
+			.no
+				font-weight: 600
+				color: #d0111b
+				margin: 10px 0
+
+			.name
+				font-weight: 600
+				+font-size(30px)
+				min-height: 75px
+				margin-bottom: 15px
+
+			.text
+				color: #666
+				+font-size2(16px,24px)
+				margin-bottom: 40px
+				min-height: 150px
+
+			.detail-btn
+				align-items: center
+				a
+					width: 200px
+					height: 67px
+					align-items: center
+					justify-content: center
+					color: #fff
+					margin-right: 23px
+					font-weight: 600
+					+font-size(18px)
+					opacity: .7
+
+					&:before
+						margin-right: 5px
+
+					&.inquiry
+						background: #e70914
+
+						&:before
+							content: ''
+							display: block
+							width: 24px
+							height: 24px
+							background: url('../images/question_answer_white_24dp.svg') no-repeat center
+							background-size: contain
+
+					&.back
+						background: #b8b8b8
+
+						&:before
+							content: ''
+							display: block
+							width: 24px
+							height: 24px
+							background: url('../images/undo_white_24dp.svg') no-repeat center
+							background-size: contain
+
+					&:hover
+						opacity: 1
+
+		.scroll-wrap	
+			position: absolute
+			left: 50%
+			bottom: -40px
+			z-index: 3
+			color: #fff
+			width: 20px
+			transform: translateX(-50%)
+			justify-content: center
+			flex-wrap: wrap
+
+			span
+				+font-size(20px)
+				writing-mode: vertical-rl
+				font-style: italic
+
+			.scroll
+				width: 1px
+				height: 80px
+				background: transparent
+				position: relative
+				overflow: hidden
+				margin: 20px 0 0 0
+
+				.scroll-line
+					width: 100%
+					height: 100%
+					display: block
+					background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(4, 15, 48, 0) 50%)
+					background-position: 0 -80px
+					background-size: 100% 200%
+					animation: scrolldown 4s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite
+
+		+rwd(1360 + 'px')
+			align-items: center
+
+		+rwd($gridLg + 'px')
+			padding: 30px
+			.detail-top-info
+				.detail-btn
+					position: fixed
+					bottom: 0
+					left: 0
+					width: 100%
+					z-index: 2
+					a
+						width: 50%
+						opacity: 1
+						margin-right: 0
+						+font-size(16px)
+						height: 50px
+				.text
+					margin-bottom: 0
+
+		+rwd($gridMd + 'px')
+			flex-wrap: wrap
+
+			.detail-top-img, .detail-top-info
+				width: 100%
+
+			.detail-top-info
+				.share
+					justify-content: flex-start
+					margin-top: 20px
+					a
+						margin: 0 3px
+
+				.name
+					+font-size(24px)
+
+		+rwd($gridSm + 'px')
+			padding: 15px
+
+
+
+
+	.detail-content
+		display: grid
+		grid-template-columns: 240px 1fr
+		margin-top: 120px
+
+		.scroll-nav
+			margin-top: 5px
+
+		.scroll-nav-list
+			position: sticky
+			top: 120px
+			overflow-x: auto
+
+		.scroll-nav-item
+			display: block
+			width: 100%
+			margin-bottom: 15px
+			font-weight: 600
+			white-space: nowrap
+
+			&:hover
+				text-decoration: underline
+
+		.content
+			display: grid
+			grid-template-columns: 1fr
+			grid-row-gap: 70px
+			width: 100%
+
+			.content-box
+				width: 100%
+
+			.content-title
+				+font-size(24px)
+				font-weight: 600
+				margin-bottom: 35px
+
+			.detail-edit01
+				color: #666666
+				+font-size2(16px,24px)
+
+				table
+					border: solid 1px #cacaca
+					width: 100%			
+
+				th, td
+					border: solid 1px #cacaca
+
+				th
+					height: 62px
+					width: 230px
+					padding: 0 0 0 30px
+					text-align: left
+					background: #f5f5f5
+					font-weight: 600
+				
+				td
+					font-weight: normal
+					padding: 0 0 0 30px
+
+		+rwd($gridLg + 'px')
+			display: block
+			margin-top: 60px
+			width: 100%
+
+			.scroll-nav-list
+				display: none
+				margin-bottom: 30px
+			
+			.scroll-nav-item
+				width: auto
+				margin-right: 25px
+
+			.content
+				display: block
+				
+				.content-box
+					margin-bottom: 30px
+
+		+rwd($gridMd + 'px')
+			.content
+				.content-title
+					+font-size(20px)
+			.detail-edit01
+				table
+					display: block
+					width: 100%
+					max-width: 100%
+					overflow: auto
+					white-space: nowrap
+				th, td
+					padding: 0 20px !important
+					width: auto
+
+
+
+.news
+	.list
+		display: grid
+		grid-template-columns: 1fr
+		grid-row-gap: 34px
+
+		.list-item
+			background: #fff
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			padding: 20px
+			align-items: flex-start
+
+			figure
+				position: relative
+				min-width: 28.4%
+				padding-bottom: 17.6%
+				background: #666
+				margin-right: 77px
+				overflow: hidden
+
+				img
+					position: absolute
+					width: 100%
+					height: auto
+					display: block
+					top: 0
+					left: 0
+
+			.info
+				align-items: center
+				margin-top: 20px
+				width: 100%
+
+				.date
+					color: #a0a0a0
+
+				.name
+					+font-size(24px)
+					display: block
+					font-weight: 600
+					min-height: 63px
+					margin-bottom: 20px
+
+				.text
+					color: #666666
+					+ellipsis(3)
+		
+		+rwd(1360 + 'px')
+			.list-item
+				align-items: center
+
+				figure
+					margin-right: 6%
+
+		+rwd($gridLg + 'px')
+			.list-item
+				.info
+					margin-top: 0
+
+					.date
+						+font-size(14px)
+					.name
+						+font-size(18px)
+						min-height: auto
+
+					.text
+						display: none
+
+		+rwd($gridMd + 'px')
+			.list-item
+				figure
+					min-width: 40%
+					padding-bottom: 24.7%
+
+
+		+rwd($gridSm + 'px')
+			.list-item
+				.info
+					.name
+						+font-size(16px)
+
+
+	.detail
+		.name
+			+font-size(36px)
+			font-weight: bold
+
+			+rwd($gridLg + 'px')
+				+font-size(30px)
+
+			+rwd($gridMd + 'px')
+				+font-size(24px)
+
+		.content
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			background: #fff
+			padding: 76px 11%
+			margin-top: 30px
+
+			.news-edit01
+				margin-top: 20px
+
+				img
+					max-width: 100%
+					height: auto
+
+			+rwd($gridMd + 'px')
+				padding: 30px
+
+		.detail-btn
+			background: #b8b8b8
+			width: 200px
+			height: 67px
+			align-items: center
+			justify-content: center
+			color: #fff
+			font-weight: 600
+			+font-size(18px)
+			opacity: .7
+			margin: 73px auto 0
+
+			&:hover
+				opacity: 1
+
+.case
+	.link
+		margin-bottom: 33px
+		overflow-x: auto
+
+		.link-item
+			background: #f7f7f7
+			height: 68px
+			position: relative
+			align-items: center
+			justify-content: space-between
+			font-weight: 600
+			padding: 0 20px
+			+font-size(18px)
+			margin-right: 8px
+
+			span
+				padding-right: 20px
+				white-space: nowrap
+			
+			&:before
+				display: block
+				content: ''		
+				height: 4px			
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 0
+				z-index: 2
+				background: #d0111b
+				transition: 0.3s ease-in
+
+			svg
+				min-width: 24px
+				transition: 0.3s ease-in
+				transform: rotate(180deg)
+
+			&:hover, &.active
+				color: #d0111b
+				&:before
+					width: 100%
+				
+				svg
+					transform: rotate(180deg) translateX(-5px)
+					fill: #d0111b
+
+			+rwd($gridSm + 'px')
+				height: 50px
+				+font-size(14px)
+
+
+	.list
+		width: 100%
+		display: grid
+		grid-template-columns: repeat(3,1fr)
+		grid-gap: 30px
+
+		.list-item
+			background: #fff
+			width: 100%
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			position: relative
+			transition: .3s ease-in
+
+			*
+				transition: .3s ease-in
+			
+			a
+				display: block
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				z-index: 2
+				overflow: hidden
+				text-indent: -9999px
+
+			figure
+				position: relative
+				z-index: 1
+				width: 100%
+				padding-bottom: 66%
+				overflow: hidden
+
+				img
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: auto
+					display: block
+
+			.info
+				position: relative
+				z-index: 1
+				padding: 20px 25px
+
+				.info-type
+					display: inline-block
+					padding: 5px 15px
+					border-radius: 30px
+					border: solid 1px #e24242
+					color: #e24242
+					white-space: nowrap
+					+font-size(15px)
+
+				.name
+					+font-size(20px)
+					font-weight: 600
+					margin: 10px 0
+
+				.text
+					color: #666
+					+ellipsis(3)
+					margin-bottom: 5px
+
+			&:hover
+				transform: translateY(-5px)
+
+				.info
+					.info-type
+						background: #e24242
+						color: #fff
+
+					.name
+						color: #e24242
+
+		+rwd($gridSm + 'px')
+			grid-template-columns: repeat(2,1fr)
+			grid-gap: 15px
+			.list-item
+				.info
+					padding: 15px
+
+					.info-type
+						+font-size(14px)
+
+					.name
+						+font-size(18px)
+		
+		+rwd($gridSmm + 'px')
+			grid-template-columns: 1fr
+
+
+	.detail
+		.info-type
+			color: #d0111b
+			+font-size(18px)
+			font-weight: 600
+
+		.name
+			+font-size(36px)
+			font-weight: bold
+			margin-top: 10px
+
+		.content
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			background: #fff
+			padding: 76px 137px
+			margin-top: 30px
+
+			.case-edit01
+				margin-top: 20px
+
+				img
+					max-width: 100%
+					height: auto
+
+		.detail-btn
+			background: #b8b8b8
+			width: 200px
+			height: 67px
+			align-items: center
+			justify-content: center
+			color: #fff
+			font-weight: 600
+			+font-size(18px)
+			opacity: .7
+			margin: 73px auto 0
+
+			&:hover
+				opacity: 1
+
+.FAQ
+	.link
+		margin-bottom: 33px
+		overflow-x: auto
+
+		.link-item
+			background: #f7f7f7
+			height: 68px
+			position: relative
+			align-items: center
+			font-weight: 600
+			padding: 0 20px
+			+font-size(18px)
+			margin-right: 8px
+
+			width: auto
+
+			span
+				padding-right: 20px
+				white-space: nowrap
+			
+			&:before
+				display: block
+				content: ''		
+				height: 4px			
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 0
+				z-index: 2
+				background: #d0111b
+				transition: 0.3s ease-in
+
+			svg
+				transition: 0.3s ease-in
+				transform: rotate(180deg)
+				min-width: 24px
+
+			&:hover, &.active
+				color: #d0111b
+				&:before
+					width: 100%
+				
+				svg
+					transform: rotate(180deg) translateX(-5px)
+					fill: #d0111b
+
+			+rwd($gridSm + 'px')
+				height: 50px
+				+font-size(14px)
+
+	.list
+		width: 100%
+		display: grid
+		grid-template-columns: 1fr
+		grid-row-gap: 20px
+
+		.list-item
+			background: #fff
+			width: 100%
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			transition: .3s ease-in
+			align-items: center
+			padding: 30px 30px 30px 50px
+			justify-content: space-between
+
+			*
+				transition: .3s ease-in
+
+			a
+				+font-size(18px)
+				font-weight: 600
+
+			svg
+				min-width: 24px
+				margin-left: 20px
+			
+
+			&:hover
+				transform: translateY(-5px)
+
+				a
+					color: #d0111b
+
+				svg
+					fill: #d0111b
+
+
+	.detail
+		.info-type
+			color: #d0111b
+			+font-size(18px)
+			font-weight: 600
+
+		.name
+			+font-size(36px)
+			font-weight: bold
+			margin-top: 10px
+
+			+rwd($gridLg + 'px')
+				+font-size(30px)
+
+			+rwd($gridMd + 'px')
+				+font-size(24px)
+
+		.content
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			background: #fff
+			padding: 76px 11%
+			margin-top: 30px
+
+			.case-edit01
+				margin-top: 20px
+
+				img
+					max-width: 100%
+					height: auto
+
+			+rwd($gridMd + 'px')
+				padding: 30px
+
+		.detail-btn
+			background: #b8b8b8
+			width: 200px
+			height: 67px
+			align-items: center
+			justify-content: center
+			color: #fff
+			font-weight: 600
+			+font-size(18px)
+			opacity: .7
+			margin: 73px auto 0
+
+			&:hover
+				opacity: 1		
+				
+.inquiry
+	.model
+		color: #d0111b
+		+font-size(18px)
+		font-weight: 600
+
+	.name
+		+font-size(36px)
+		font-weight: bold
+		margin-top: 10px
+
+		+rwd($gridLg + 'px')
+			+font-size(30px)
+
+		+rwd($gridMd + 'px')
+			+font-size(24px)
+
+
+	.content
+		box-shadow: 0 10px 20px rgba(0,0,0,.05)
+		background: #fff
+		padding: 76px 11%
+		margin-top: 30px
+
+		.tips
+			color: #666
+			padding-bottom: 30px
+			border-bottom: solid 1px #666
+			margin-bottom: 30px
+			+font-size2(16px,30px)
+			font-weight: 600
+
+			.s-color
+				color: #d0111b
+
+		.form
+			display: grid
+			grid-template-columns: 1fr
+			grid-row-gap: 30px
+
+			.form-row.form-row--file
+				align-items: center
+				height: 50px
+
+				.form-row-front
+					margin-top: 0
+
+
+			.form-row
+				width: 100%
+
+				.form-row-front
+					min-width: 206px
+					margin-top: 17px
+
+					.name
+						position: relative
+						font-weight: 600
+						+font-size(16px)
+
+						span
+							position: absolute
+							top: -8px
+							right: -16px
+							font-weight: bold
+							color: #d0111b
+
+				.form-row-in--arrow
+					position: relative
+
+					&:before
+						content: ''
+						display: block
+						width: 0
+						height: 0
+						border-style: solid
+						border-width: 7px 5px 0 5px
+						border-color: #000000 transparent transparent transparent
+						position: absolute
+						right: 15px
+						top: 50%
+						transform: translateY(-3.5px)
+
+				.form-row-in--VerifyCode
+					> div
+						display: flex
+						align-items: center
+						
+						.form__control
+							width: 144px
+
+
+				.form-row-in
+					width: 100%
+
+					.form__control
+						appearance: none
+						background: #f1f1f1
+						border-radius: 5px
+						width: 100%
+						height: 50px
+						padding: 0 20px
+						appearance: none
+						border: none
+
+					.form__control2
+						appearance: none
+						background: #f1f1f1
+						border-radius: 5px
+						width: 100%
+						height: 140px
+						padding: 20px
+						appearance: none
+						border: none
+
+					.text-danger
+						color: #d0111b
+						font-weight: 600
+						display: block
+
+		+rwd($gridLg + 'px')
+			padding: 30px
+			margin-top: 0
+
+		+rwd($gridSm + 'px')
+			padding: 15px
+			.form
+				grid-row-gap: 10px
+
+				.form-row.form-row--file
+					align-items: center
+					height: auto
+
+					.form-row-front
+						margin-top: 17px
+
+				.form-row
+					flex-wrap: wrap
+					.form-row-front
+						margin-bottom: 10px
+
+	.form-btn
+		background: #e70914
+		width: 200px
+		height: 67px
+		align-items: center
+		justify-content: center
+		color: #fff
+		font-weight: 600
+		+font-size(18px)
+		opacity: .7
+		margin: 73px auto 0
+		border: 0
+		transition: .3s ease-in
+
+		&:hover
+			opacity: 1		
+	.btm-list
+		width: 100%
+		display: grid
+		grid-template-columns: repeat(3,1fr)
+		grid-column-gap: 15px
+		margin-top: 97px
+
+		.btm-list-item
+			background: #f3dfd7
+			border-radius: 10px
+			color: #d56d43
+			padding: 35px 14.2%
+			position: relative
+			transition: .3s ease-in
+			cursor: pointer
+
+			*
+				transition: .3s ease-in
+
+			&:hover
+				background: #e70914
+				color: #fff
+
+				a
+					color: #fff
+
+				.btm-list-icon
+					border: solid 1px #fff
+
+					svg
+						fill: #fff
+
+		.btm-list-top
+			align-items: center
+			font-weight: 600
+			+font-size(24px)
+
+			span
+				padding-right: 17px
+
+		.btm-list-icon
+			width: 59px
+			min-width: 59px
+			height: 59px
+			border-radius: 90%
+			border: solid 1px #d56d43
+			align-items: center
+			justify-content: center
+			margin-right: 25px
+
+			svg
+				width: 27px
+				height: auto
+				display: block
+				fill: #d56d43
+		.btm-list-link
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			display: block
+		.btm-list-text
+			font-weight: bold
+			+font-size(18px)
+			margin-top: 20px
+			align-items: center
+			min-height: 45px
+
+			a
+				color: #d56d43
+
+		+rwd($gridLg + 'px')	
+			grid-template-columns: 1fr
+			grid-row-gap: 20px	
+.about
+	display: grid
+	grid-template-columns: 240px 1fr
+
+	.about-wrap
+
+	.about-nav
+		position: sticky
+		top: 150px
+
+		.about-nav_item
+			+font-size(18px)
+			color: #666666
+			margin-bottom: 15px
+			font-weight: 600
+			display: block
+			white-space: nowrap
+
+			&:hover
+				color: #d0111b
+				text-decoration: underline
+
+		.about-nav_item--active
+			color: #d0111b
+			text-decoration: underline
+
+	.about-content
+		color: #666666
+		+font-size2(16px,30px)
+
+		.s-title
+			color: #000
+			+font-size(22px)
+			font-weight: 600
+			margin-top: 20px
+
+		.s-list
+			margin: 40px 0 60px 0
+			display: grid
+			grid-row-gap: 8px
+
+			li
+				align-items: center
+				+font-size2(16px, 18px)
+
+				.front
+					font-weight: bold
+					padding-right: 10px
+					align-items: center
+					white-space: nowrap
+
+				&:before
+					content: attr(data-num)
+					display: flex
+					align-items: center
+					justify-content: center
+					min-width: 32px
+					width: 32px
+					height: 32px
+					border-radius: 90%
+					color: #fff
+					background: #e22525
+					margin-right: 20px
+
+		img
+			width: 100%
+			height: auto
+
+		.history
+			
+			.front-top
+				text-align: center
+				+font-size(24px)
+				font-weight: bold
+
+			.list
+				width: 100%
+				padding: 96px 0
+				position: relative
+
+				.line
+					position: absolute
+					top: 20px
+					bottom: 20px
+					background: #cccccc
+					width: 1px
+					height: calc( 100% - 40px )
+					left: 50%
+					transform: translateX(-50%)
+					z-index: 1
+
+					&:before, &:after
+						content: ''
+						display: block
+						border-radius: 90%
+						position: absolute
+						left: 50%
+						transform: translateX(-50%)
+
+					&:before
+						top: 0
+						background: #d0111b
+						width: 17px
+						height: 17px
+
+					&:after
+						bottom: 0
+						background: #cccccc
+						width: 14px
+						height: 14px
+
+					
+
+
+				.list-row
+					position: relative
+					z-index: 2
+					margin: 24px 0
+					
+					&:nth-child(even)
+						justify-content: flex-end
+
+						.list-box
+
+							&:before
+								right: normal
+								left: -44px
+
+				.list-box
+					border-radius: 10px
+					position: relative
+					background: #f3f3f3
+					padding: 20px 30px
+					width: calc( 50% - 35px )
+					
+
+					.year
+						font-weight: bold
+						color: #d0111b
+						+font-size(24px)
+
+					.text
+						+font-size2(16px,24px)
+						margin-top: 10px
+
+					&:before
+						background: #fff
+						content: ''
+						display: block
+						width: 17px
+						height: 17px
+						border-radius: 90%
+						border: solid 3px #d0111b
+						position: absolute
+						top: 10px
+						right: -44px
+
+			+rwd($gridLg + 'px')
+				.list
+					.list-box
+						padding: 15px
+						.year
+							+font-size(18px)
+						.text
+							+font-size2(14px,16px)
+
+		.tabs
+			padding-top: 40px
+			overflow-x: auto
+
+			li
+				+font-size(18px)
+				font-weight: 600
+				position: relative
+				margin-right: 45px
+				padding: 10px 0
+				a
+					color: #b7b7b7
+					white-space: nowrap
+					padding: 0 0 5px 0
+					display: block
+
+				&:before
+					content: ''
+					display: block
+					width: 100%
+					height: 5px
+					background: #d0111b
+					bottom: 0px
+					left: 0
+					position: absolute
+					transition: .3s ease-in
+					transform: scaleX(0)
+
+				&.current
+					a
+						color: #000
+
+					&:before
+						transform: scaleX(1)
+
+			+rwd($gridLg + 'px')
+				padding: 20px 0 0 0
+				justify-content: flex-start
+
+				li
+					margin: 0 20px 0 0
+					+font-size(14px)
+
+		.tab-content-wrap
+
+		.tab-content
+			opacity: 0
+			visibility: hidden
+			transition: .5s ease-in-out
+			max-height: 0
+			overflow: hidden
+			width: 100%
+			
+
+			&.current
+				visibility: visible
+				opacity: 1
+				max-height: inherit !important
+				overflow: inherit		
+
+		.btn2	
+			align-items: center
+			position: relative
+
+			a
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				width: 100%
+				height: 100%
+				display: block
+
+			.btn2-item
+				align-items: center
+				width: 260px
+				height: 90px
+				border-radius: 5px
+				position: relative
+				margin-right: 15px
+				transition: .3s ease-in
+
+				.text
+					color: #fff
+					font-weight: bold
+					line-height: 20px
+					span
+						display: block
+
+				&.LINE
+					background: #06c755
+
+					&:before
+						content: ''
+						display: block
+						width: 50px
+						height: 50px
+						background: url('../images/LINE3.svg') no-repeat center
+						background-size: contain
+						margin: 0 18px 0 25px
+
+				&.mail
+					background: #e1e1e1
+
+					.text
+						color: #5e5e5e
+					
+					&:before
+						content: ''
+						display: block
+						width: 35px
+						height: 35px
+						background: url('../images/email2.svg') no-repeat center
+						background-size: contain
+						margin: 0 18px 0 25px
+
+				&:hover
+					transform: translateY(-5px)
+
+			+rwd($gridSm + 'px')
+				flex-wrap: wrap
+
+				.btn2-item
+					width: 100%
+					margin-bottom: 10px
+
+
+		.ad-list
+			display: grid
+			grid-template-columns: repeat(2,1fr)
+			grid-row-gap: 80px
+			align-items: flex-start
+
+			.ad-list-item
+				align-items: center
+				justify-content: center
+				text-align: center
+
+				> div
+					width: 66%
+
+			.ad-list-pic
+				width: 250px
+				padding-top: 250px
+				margin: auto
+
+				&.pic1
+					background: url('../images/ad1.svg') no-repeat center  center
+					background-size: 183px auto
+
+				&.pic2
+					background: url('../images/ad2.svg') no-repeat center  center
+					background-size: 166px auto
+
+				&.pic3
+					background: url('../images/ad3.svg') no-repeat center  center
+					background-size: 187px auto
+
+				&.pic4
+					background: url('../images/ad4.svg') no-repeat center  center
+					background-size: 192px auto
+
+			.ad-list-name
+				color: #000
+				+font-size(18px)
+
+			.ad-list-text
+				line-height: 24px
+				margin-top: 10px
+				padding: 0 20px
+
+			+rwd($gridLg + 'px')
+				.ad-list-item
+					> div
+						width: 90%
+					
+				.ad-list-pic
+					width: 66%
+					padding-top: 66%
+
+					&.pic1
+						background: url('../images/ad1.svg') no-repeat center  center
+						background-size: contain
+
+					&.pic2
+						background: url('../images/ad2.svg') no-repeat center  center
+						background-size: contain
+
+					&.pic3
+						background: url('../images/ad3.svg') no-repeat center  center
+						background-size: contain
+
+					&.pic4
+						background: url('../images/ad4.svg') no-repeat center  center
+						background-size: contain
+
+				.ad-list-name
+					margin-top: 30px
+
+				.ad-list-text
+					+font-size2(14px,16px)
+
+			+rwd($gridSmm + 'px')
+				grid-template-columns: 1fr
+
+
+
+	.about-title
+		+font-size2(36px,36px)
+		font-weight: 600
+		margin-bottom: 25px
+		color: #000
+
+		&:after
+			content: ''
+			display: block
+			width: 33px
+			height: 3px
+			background: #e22525
+			margin-top: 20px
+
+	+rwd($gridLg + 'px')
+		display: block
+		width: 100%
+
+		.about-nav
+			display: flex
+			margin-bottom: 20px
+			overflow: auto
+			width: 100%
+
+			.about-nav_item
+				margin-right: 25px
+				position: relative
+
+				&:after
+					content: ''
+					display: block
+					width: 1px
+					height: 15px
+					background: #666
+					position: absolute
+					top: 50%
+					right: -12.5px
+					transform: translateY(-50%)
+
+				&:last-child
+					&:after
+						display: none
+
+		.about-content
+			.s-list
+				li
+					> div
+						flex-wrap: wrap
+
+		.about-title
+			+font-size(30px)
+
+	+rwd($gridMd + 'px')
+		.about-content
+			.s-list
+				li
+					margin-bottom: 10px
+
+					.text
+						+font-size2(14px,16px)
+						margin-top: 5px
+						
+	+rwd($gridSm + 'px')
+		.about-title
+			+font-size(24px)
+			
+.error
+	min-height: 500px
+	align-items: center
+	justify-content: center
+	text-align: center
+
+	.error-title
+		+font-size(36px)
+		font-weight: bold
+
+	.error-text
+		margin-top: 25px
+
+	.error-btn
+		color: #fff
+		width: 244px
+		height: 67px
+		margin: 60px auto 0
+		background: #e70914
+		+font-size(18px)
+		font-weight: 600
+		align-items: center
+		justify-content: center
+		opacity: .7
+
+		&:hover
+			opacity: 1
+
+
+.page-btm
+	background: url('../images/page-btm.jpg') no-repeat center center
+	background-size: cover
+	width: 100%
+	height: 460px
+	position: relative
+	
+	.page-btm-in
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		background: rgba(0,0,0,.7)
+		align-items: center
+		justify-content: center
+		padding: 0 30px
+
+	.title
+		+font-size(36px)
+		font-weight: 600
+		color: #fff
+
+		+rwd($gridXL + 'px')
+			+font-size(30px)
+
+		+rwd($gridMd + 'px')
+			+font-size(24px)
+
+	.btm-btn
+		+font-size(20px)
+		max-width: 412px
+		width: 100%
+		align-items: center
+		justify-content: center
+		position: relative
+		height: 75px
+		color: #e24242
+		font-weight: 600
+		transition: .3s ease-in
+		border: solid 1px #e24242
+		background: none
+		color: #e24242
+		margin: 50px auto 0
+
+		svg
+			display: block
+			background: url('../images/about-right.svg') no-repeat center center
+			background-size: 20px auto
+			width: 20px
+			height: 20px
+			position: absolute
+			right: 5%
+			top: 50%
+			margin-top: -10px
+			transform: rotate(-180deg)
+			transition: .2s ease-in
+
+		&:hover
+			background: #e70914
+			color: #fff
+			svg
+				fill: #fff
+
+		+rwd($gridLg + 'px')
+			background: #e70914
+			color: #fff
+			+font-size(18px)
+			svg
+				fill: #fff
+

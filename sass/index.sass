@@ -1,0 +1,730 @@
+﻿//This is sass file
+@import default
+
+.banner-wrap
+	position: relative
+	
+
+	.idx-news
+		width: calc( 100% - 33% )
+		position: absolute
+		bottom: -73px
+		height: 122px
+		background: #d0111b
+		z-index: 2
+		left: 33%
+		right: 0
+		align-items: center
+		
+
+		.news
+			color: #fff
+			padding: 0 420px 0 60px
+			align-items: center
+			width: 100%
+
+			dd
+				width: 100%
+				align-items: center
+				overflow: hidden
+
+			.s-title
+				+font-size(24px)
+				font-weight: bold
+
+			.news-slider
+				width: 100%
+
+			.line
+				min-width: 1px
+				width: 1px
+				height: 18px
+				margin: 0 20px
+				display: block
+				background: #fff
+
+			.name
+				font-weight: 600
+				+font-size(18px)
+				display: inline-block
+				+ellipsis(2)
+				
+
+		.news-more
+			border: solid 1px #fff
+			padding: 10px 0
+			width: 143px
+			font-weight: 600
+			transition: .3s ease-in
+			text-align: center
+			position: absolute
+			right: 190px
+
+			&:hover
+				background: #fff
+				color: #d0111b
+		
+		a
+			color: #fff
+			align-items: center
+			height: 47px
+
+		+rwd($gridXL + 'px')
+			.news-more
+				right: 30px
+
+			.news
+				padding: 0 200px 0 5%
+
+				.name
+					+font-size(16px)
+
+		+rwd($gridLg + 'px')
+			position: relative
+			bottom: 0
+			width: 100%
+			left: 0
+			padding-left: 11.6%
+
+			.news
+				padding: 0 190px 0 0
+
+
+		+rwd($gridLg2 + 'px')
+			.news
+				a
+					flex-wrap: wrap
+					height: auto
+				.line
+					display: none
+
+		+rwd($gridMd + 'px')
+			padding-left: 18%
+			.news
+				.date
+					+font-size(14px)
+					margin-bottom: 5px
+
+				.news-more
+					display: none
+
+		+rwd($gridSm + 'px')
+			.news
+				.s-title
+					position: absolute
+					left: 11.6%
+					top: -18px
+
+				dd
+					margin: 0
+		
+	.scroll-wrap	
+		position: absolute
+		left: 11.6%
+		bottom: -40px
+		z-index: 3
+		color: #fff
+		width: 20px
+		justify-content: center
+		flex-wrap: wrap
+
+		span
+			+font-size(20px)
+			writing-mode: vertical-rl
+			font-style: italic
+
+		.scroll
+			width: 1px
+			height: 80px
+			background: #fff
+			position: relative
+			overflow: hidden
+			margin: 20px 0 0 0
+
+			.scroll-line
+				width: 100%
+				height: 100%
+				display: block
+				background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(4, 15, 48, 0) 50%)
+				background-position: 0 -80px
+				background-size: 100% 200%
+				animation: scrolldown 4s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite
+
+		+rwd($gridXL2 + 'px')
+			left: 5%
+
+		+rwd($gridLg + 'px')
+			span
+				+font-size(16px)
+
+		+rwd($gridSm + 'px')
+			left: 3%
+
+.idx-banner
+	overflow: hidden
+	position: static
+	z-index: 1
+	img
+		width: 100%
+		height: auto
+		display: block
+
+	.idx-banner-img
+		position: relative
+
+		.slogan
+			position: absolute
+			background: rgba(0,0,0,.4)
+			width: 100%
+			height: 100%
+			z-index: 2
+			color: #fff
+			align-items: center
+
+			> div
+				margin-left: 11.6%
+				max-width: 45%
+
+			.title
+				+font-size(52px)
+
+			.text
+				+font-size2(18px,30px)
+
+				margin: 15px 0
+
+			.more
+				display: inline-block
+				border: solid 1px #fff
+				padding: 20px 72px
+				margin-top: 45px
+				transition: .3s ease-in
+				position: static
+				z-index: 5
+				color: #fff
+
+				&:hover
+					border: solid 1px #e24242
+					background: #d0111b
+					color: #fff
+
+			+rwd($gridXL + 'px')
+				> div
+					max-width: 60%
+				.title
+					+font-size(48px)
+				.text
+					+font-size2(16px,24px)
+					+ellipsis(3)
+				.more
+					padding: 15px 60px
+					margin-top: 20px
+
+			+rwd($gridLg + 'px')
+				.title
+					+font-size(36px)
+				.text
+					display: none
+
+			+rwd($gridMd + 'px')
+				> div
+					max-width: 70%
+
+				.title
+					+font-size(30px)
+
+				.more
+					padding: 10px 30px
+					+font-size(15px)
+
+		&:hover
+			.slogan
+				.more
+					
+
+
+		picture
+			position: static
+			z-index: 1
+
+	.slick-active
+		img
+			animation: zoomslide 12s
+
+	.slick-dots
+		bottom: 0
+		top: 0
+		right: 30px
+		height: 100%
+		width: 12px
+		display: flex
+		flex-wrap: wrap
+		align-content: center
+
+		li
+			width: auto
+			height: auto
+			padding: 5px 0
+			button
+				width: auto
+				height: auto
+				&:before
+					content: ''
+					width: 10px
+					height: 10px
+					border-radius: 90%
+					border: solid 1px #fff
+			&.slick-active
+				button
+					&:before
+						background: #d60f11
+						border: solid 1px #d60f11
+				
+.idx-content--bg
+	background: url('../images/bg.jpg') no-repeat
+	background-size: 100% auto	
+
+.idx-content--bg2
+	background: #f5f5f5
+	padding: 90px 0
+	+rwd($gridMd + 'px')
+		padding: 60px 0	
+
+.idx-content--paddingTop
+	padding: 184px 0 60px 0
+	+rwd($gridLg + 'px')
+		padding: 60px 0
+
+.idx-content
+	.idx-title
+		+font-size(42px)
+		text-align: center
+		color: #000
+		font-weight: 600
+
+		span
+			color: #e24242
+
+		+rwd($gridXL + 'px')
+			+font-size(36px)
+
+		+rwd($gridMd + 'px')
+			+font-size(30px)
+
+	.idx-product	
+		margin: 25px auto 0
+		max-width: 68%		
+
+		.slick-slide
+			overflow: hidden
+			
+		.item
+			background: #fff
+			width: calc( 100% - 26px )
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			margin: 30px 13px
+			position: relative
+			padding: 48px 25px
+			transition: .3s ease-in
+			
+			a
+				display: block
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				z-index: 2
+				overflow: hidden
+				text-indent: -9999px
+
+			figure
+				position: relative
+				z-index: 1
+				width: 100%
+				padding-bottom: 100%
+
+				img
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: auto
+					
+
+			.name
+				width: 100%
+				text-align: center
+				+font-size(18px)
+				font-weight: 600
+				margin-top: 45px
+				transition: .3s ease-in
+
+			&:hover
+				transform: translateY(-5px)
+				.name
+					color: #e24242
+
+		+rwd($gridXL + 'px')
+			max-width: 80%
+			.item
+				.name
+					+font-size(16px)
+
+		+rwd($gridMd + 'px')
+			padding: 0 30px
+
+		+rwd($gridSm + 'px')
+			padding: 0 15px	
+
+	.idx-case	
+		margin: 25px auto 0
+		max-width: 68%		
+
+		.slick-slide
+			overflow: hidden
+			
+		.item
+			background: #fff
+			width: calc( 100% - 26px )
+			box-shadow: 0 10px 20px rgba(0,0,0,.05)
+			margin: 30px 13px
+			position: relative
+			transition: .3s ease-in
+
+			*
+				transition: .3s ease-in
+			
+			a
+				display: block
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				z-index: 2
+				overflow: hidden
+				text-indent: -9999px
+
+			figure
+				position: relative
+				z-index: 1
+				width: 100%
+				padding-bottom: 66%
+				overflow: hidden
+
+				img
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: auto
+					display: block
+
+			.info
+				position: relative
+				z-index: 1
+				padding: 20px 25px
+
+				.info-type
+					display: inline-block
+					padding: 5px 15px
+					border-radius: 30px
+					border: solid 1px #e24242
+					color: #e24242
+					+font-size(15px)
+
+				.name
+					+font-size(20px)
+					font-weight: 600
+					margin: 10px 0
+
+				.text
+					color: #666
+					+ellipsis(3)
+					margin-bottom: 5px
+					min-height: 60px
+
+			&:hover
+				transform: translateY(-5px)
+
+				.info
+					.info-type
+						background: #e24242
+						color: #fff
+
+					.name
+						color: #e24242
+		
+		+rwd($gridXL + 'px')
+			max-width: 80%	
+
+		+rwd($gridMd + 'px')
+			padding: 0 30px	
+			.item
+				.info
+					.name
+						+font-size(18px)
+
+					.text
+						+ellipsis(2)
+						min-height: 40px
+
+		+rwd($gridSm + 'px')
+			padding: 0 15px	
+
+	.more
+		width: 200px
+		height: 60px
+		margin: 30px auto 0
+		position: relative
+		align-items: center
+		justify-content: space-between
+		padding: 0 12px
+		+font-size(20px)
+		
+		&:after, &:before
+			display: block
+			content: ''		
+			height: 1px			
+			position: absolute
+			bottom: 0
+			left: 0
+			
+		&:after
+			width: 100%
+			z-index: 1
+			background: #000
+
+		&:before
+			width: 0
+			z-index: 2
+			background: #e24242
+			transition: 0.3s ease-in	
+
+		svg
+			transition: 0.3s ease-in
+			transform: rotate(180deg)
+
+		&:hover
+			&:before
+				width: 100%
+			
+			svg
+				transform: rotate(180deg) translateX(-5px)
+				fill: #e24242
+
+		+rwd($gridMd + 'px')
+			width: 150px
+			height: 40px
+			+font-size(16px)
+			padding: 0 6px
+			margin: 15px auto 0
+
+	.idx-about
+		width: 100%
+		position: relative
+
+		.idx-about-img2
+			position: absolute
+			z-index: 2
+			width: 37%
+			left: 18%
+			top: 9%
+			
+			img
+				width: 100%
+				height: auto
+				display: block
+				min-width: 560px
+
+			+rwd($gridXL + 'px')
+				left: 15%
+
+			+rwd($gridXL2 + 'px')
+				left: 12%
+
+			+rwd($gridLg + 'px')
+				left: 6%
+
+			+rwd($gridMd + 'px')
+				width: 75%
+				img
+					min-width: inherit
+
+
+		.idx-about-img
+			display: block
+			min-width: 40%
+			padding-bottom: 36%
+			background: url('../images/idx-about.jpg') no-repeat
+			background-size: cover
+			position: relative
+			z-index: 1
+			min-height: 580px
+			
+			+rwd($gridXL + 'px')
+				transform: translateX(-20px) !important
+			
+		.idx-about-content
+			width: 60%
+			height: 100%
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			align-items: center
+			justify-content: center
+			z-index: 1
+
+			> div
+				width: 530px
+
+			.title
+				+font-size2(42px,60px)
+				font-weight: 600
+				span
+					color: #e24242
+
+			.text
+				+font-size2(18px,30px)
+				margin: 20px 0 0 0
+				color: #666
+
+			.about-btn
+				width: 300px
+				align-items: center
+				justify-content: center
+				position: relative
+				height: 75px
+				border-radius: 75px
+				background: #e24242
+				color: #fff
+				font-weight: 600
+				margin-top: 50px
+				transition: .3s ease-in
+
+				&:before
+					content: ''
+					display: block
+					background: url('../images/about-right.svg') no-repeat center center
+					background-size: 20px auto
+					width: 12px
+					height: 12px
+					position: absolute
+					right: 33px
+					top: 50%
+					margin-top: -6px
+					transform: rotate(180deg)
+					transition: .3s ease-in
+
+				&:hover
+					background: #f45454
+					&:before
+						transform: rotate(180deg) translateX(-5px)
+
+			+rwd($gridXL + 'px')
+				> div
+					width: 45%
+
+				.title
+					+font-size2(36px,52px)
+
+				.text
+					+font-size2(16px,24px)
+
+				.about-btn
+					width: 240px
+					height: 60px
+					border-radius: 60px
+					margin-top: 25px
+
+			+rwd($gridLg + 'px')
+				> div
+					width: 55%
+					margin-left: 150px
+
+			+rwd($gridMd + 'px')
+				.title
+					+font-size2(24px,30px)
+
+		+rwd($gridLg2 + 'px')
+			flex-wrap: wrap
+			.idx-about-img
+				transform: translateX(0) !important
+				min-height: auto
+				min-width: 70%
+				padding-bottom: 56%
+			.idx-about-img2
+				top: 5%
+				left: 18%
+
+			.idx-about-content
+				width: 100%
+				position: relative
+				margin-left: 0
+				padding: 100px 30px 60px 30px
+				text-align: center
+				> div
+					margin-left: 0
+					width: 100%
+
+				.about-btn
+					margin: 25px auto 0
+
+.idx-btm
+	width: 100%
+	min-height: 394px
+	align-items: center
+	justify-content: center
+	padding: 0 30px
+	text-align: center
+
+	.title
+		+font-size(36px)
+		font-weight: 600
+
+		+rwd($gridXL + 'px')
+			+font-size(30px)
+
+		+rwd($gridMd + 'px')
+			+font-size(24px)
+
+	.btm-btn
+		+font-size(20px)
+		width: 412px
+		align-items: center
+		justify-content: center
+		position: relative
+		height: 75px
+		color: #fff
+		font-weight: 600
+		transition: .3s ease-in
+		border: solid 1px #e24242
+		background: #fff
+		color: #e24242
+		margin: 50px auto 0
+
+		svg
+			display: block
+			background: url('../images/about-right.svg') no-repeat center center
+			background-size: 20px auto
+			width: 20px
+			height: 20px
+			position: absolute
+			right: 33px
+			top: 50%
+			margin-top: -10px
+			transform: rotate(-180deg)
+			transition: .3s ease-in
+
+		&:hover
+			background: #e24242
+			color: #fff
+			svg
+				fill: #fff
+
+		+rwd($gridXL2 + 'px')
+			width: 300px
+			height: 60px
+			+font-size(18px)
